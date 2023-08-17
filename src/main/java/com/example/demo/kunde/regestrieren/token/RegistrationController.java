@@ -11,7 +11,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 @RestController
-@RequestMapping(path = "api/v1/registration")
+@RequestMapping(path = "api/v1/")
 @AllArgsConstructor
 public class RegistrationController {
 
@@ -30,7 +30,7 @@ public class RegistrationController {
         }
 
      */
-    @GetMapping(path = "confirm")
+    @GetMapping(path = "/user/confirm")
     public ResponseEntity<String> confirm(@RequestParam("token") String token)
     {
         String confirmationResult = registrationService.confirmToken(token);

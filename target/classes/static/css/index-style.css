@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: center;
 }
+.contant-img{
+    width: 450px;
+    height: 350px;
+}
 
 .gradient-text {
     color: white;
@@ -15,7 +19,6 @@
 
 .gradient-button {
     border-radius: 20px;
-    margin-top: 10px;
     width: 120px;
     background-color: white;
     color: #ff8c00;
@@ -51,4 +54,9 @@
 
 .text_mergin{
     margin-top: 15px;
+}
+.plus-sign {
+    float: right;
+    font-size: 18px;
+    margin-right: 10px;
 }

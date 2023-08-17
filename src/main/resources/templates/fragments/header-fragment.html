@@ -1,4 +1,4 @@
-<header>
+<header xmlns="http://www.w3.org/1999/html">
     <div class="header" >
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -6,6 +6,7 @@
                 <div class="carousel-item active">
                     <div class="carousel-content">
                         <div class="sliding-container">
+                            <a class="no-underline" href="/api/v1/user/">
                             <div class="sliding-content">
                                 <div class="sliding-text">
                                     <h1>Quality Engineering & Testing</h1>
@@ -15,10 +16,11 @@
                                         Teststrategie und effiziente Prozesse im Qualitätsmanagement.</p>
                                 </div>
                                 <div class="sliding-image">
-                                    <img class="imgSlider" src="/img/mangment.jpg"
-                                         alt="Sliding Image">
+                                    <img th:if="${slide1}" th:src="${slide1}" alt="Image1" class="imgSlider">
+                                    <img th:unless="${slide1}" src="/images/placeholder.jpg" alt="Slide 1" class="imgSlider">
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -26,10 +28,11 @@
                 <div class="carousel-item ">
                     <div class="carousel-content">
                         <div class="sliding-container">
+                            <a class="no-underline" href="/api/v1/user/">
                             <div class="sliding-content">
                                 <div class="sliding-image">
-                                    <img class="imgSlider" src="/img/mangment.jpg"
-                                         alt="Sliding Image">
+                                    <img th:if="${slide2}" th:src="${slide2}" alt="Image2" class="imgSlider">
+                                    <img th:unless="${slide2}" src="/images/placeholder.jpg" alt="Slide 2" class="imgSlider">
                                 </div>
                                 <div class="sliding-text">
                                     <h1>Quality Engineering & Testing</h1>
@@ -40,6 +43,7 @@
                                     </p>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
 
@@ -47,9 +51,12 @@
                 <!-- slide 3-->
                 <div class="carousel-item">
                     <div class="carousel-content">
-                        <h2>Slide 2</h2>
-                        <p>This is the content of Slide 2.</p>
-                        <img class="imgSlider"  src="https://www.example.com/image2.jpg" alt="Slide 2">
+                        <a class="no-underline" href="/api/v1/user/">
+                        <h2>Slide 3</h2>
+                        <p>This is the content of Slide 3.</p>
+                            <img th:if="${slide3}" th:src="${slide3}" alt="Image3" class="imgSlider">
+                            <img th:unless="${slide3}" src="/images/placeholder.jpg" alt="Slide 3" class="imgSlider">
+                        </a>
                     </div>
                 </div>
             </div>

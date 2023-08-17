@@ -13,29 +13,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="/img/ITE-logo.png"
-                 alt="Logo" height="40">
-        </a>
-        <div class="navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link navbar-link" href="#">Kontakt</a>
-                </li>
-                <li class="nav-item">
-                    <span class="nav-link">|</span>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navbar-link" href="#">Deutschland</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div style="margin-top: 20px"></div>
+<div th:replace="fragments/nav-top-fragment::nav" ></div>
 <div th:replace="fragments/header-fragment::div" ></div>
 
 <section class="image-text-section" style="margin-top: 80px">
@@ -59,8 +37,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="/img/mangment.jpg"
-                     alt="Image" class="img-fluid">
+                <img th:if="${engineering}" th:src="${engineering}" alt="Image" class="img-fluid content-img">
+                <img th:unless="${engineering}" src="/images/placeholder.jpg" alt="Placeholder" class="img-fluid content-img">
             </div>
         </div>
     </div>

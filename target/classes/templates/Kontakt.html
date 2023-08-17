@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,7 +37,7 @@
 </nav>
 
 <div style="margin-top: 20px"></div>
-<div th:replace="fragments/header-fragment::div" ></div>
+<div th:replace="fragments/header-fragment::div"></div>
 
 <section class="image-text-section" style="margin-top: 80px">
     <div class="container">
@@ -44,38 +45,38 @@
             <div class="col-md-6">
                 <h2>Kontakt</h2>
                 <div class="contact-form">
-                    <form action="#" method="post">
+                    <form th:action="@{submit-form}" method="post">
                         <div class="mb-3">
-                            <label for="anrede" class="form-label">Anrede</label>
-                            <select class="form-select" id="anrede" name="anrede" required>
+                            <label for="form_salutation" class="form-label">Anrede</label>
+                            <select class="form-select" id="form_salutation" name="anrede" required>
                                 <option value="" disabled selected>Bitte wählen</option>
                                 <option value="Herr">Herr</option>
                                 <option value="Frau">Frau</option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="firstname" class="form-label">Vorname</label>
-                            <input type="text" class="form-control" id="firstname" name="firstname" required>
+                            <label for="form_Firstname" class="form-label">Vorname</label>
+                            <input type="text" class="form-control" id="form_Firstname" name="firstName" required>
                         </div>
                         <div class="mb-3">
-                            <label for="lastname" class="form-label">Nachname</label>
-                            <input type="text" class="form-control" id="lastname" name="lastname" required>
+                            <label for="form_lastname" class="form-label">Nachname</label>
+                            <input type="text" class="form-control" id="form_lastname" name="lastName" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">E-Mail</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <label for="form_email" class="form-label">E-Mail</label>
+                            <input type="email" class="form-control" id="form_email" name="email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="firma" class="form-label">Firma</label>
-                            <input type="text" class="form-control" id="firma" name="firma">
+                            <label for="form_firma" class="form-label">Firma</label>
+                            <input type="text" class="form-control" id="form_firma" name="company">
                         </div>
                         <div class="mb-3">
-                            <label for="telefon" class="form-label">Telefon</label>
-                            <input type="tel" class="form-control" id="telefon" name="telefon">
+                            <label for="form_telefon" class="form-label">Telefon</label>
+                            <input type="tel" class="form-control" id="form_telefon" name="phoneNumber">
                         </div>
                         <div class="mb-3">
-                            <label for="need" class="form-label">Bitte wählen Sie Ihr Anliegen</label>
-                            <select class="form-select" id="need" name="need" required>
+                            <label for="form_need" class="form-label">Bitte wählen Sie Ihr Anliegen</label>
+                            <select class="form-select" id="form_need" name="interest" required>
                                 <option value="" disabled selected>Bitte wählen</option>
                                 <option value="umsatz">Umsatz</option>
                                 <option value="nebenberufliche-tätigkeit">Nebenberufliche Tätigkeit</option>
@@ -83,8 +84,8 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="fragen" class="form-label">Fragen</label>
-                            <textarea class="form-control" id="fragen" name="fragen" rows="5"></textarea>
+                            <label for="form_message" class="form-label">Fragen</label>
+                            <textarea class="form-control" id="form_message" name="message" rows="5"></textarea>
                         </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" type="checkbox" value="ja" id="agreement" name="agreement"
@@ -116,8 +117,6 @@
     <h3 class="gradient-text">Haben Sie Interesse?</h3>
     <button class="gradient-button">Kontakt</button>
 </div>
-
-
 
 
 <div th:replace="fragments/nav-circular-fragment.html::div"></div>
