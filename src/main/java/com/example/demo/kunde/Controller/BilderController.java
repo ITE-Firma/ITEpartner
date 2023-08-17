@@ -22,7 +22,6 @@ public class BilderController {
     @Autowired
     private final BilderRepository mrEntityRepository;
     private Bilder bilder;
-
     public BilderController(BilderRepository mrEntityRepository) {
         this.mrEntityRepository = mrEntityRepository;
         List<Bilder> bilderList = mrEntityRepository.findAll();
@@ -35,6 +34,13 @@ public class BilderController {
             bilder = bilder;
         }
     }
+    public BilderRepository getMrEntityRepository() {
+        return mrEntityRepository;
+    }
+    public Bilder getBilder() {
+        return bilder;
+    }
+
     @GetMapping("/admin/bilder")
     public String index(Model model) {
         model.addAttribute("mrEntity", bilder);
