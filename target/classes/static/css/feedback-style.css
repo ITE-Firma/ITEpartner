@@ -1,5 +1,13 @@
+.modal-header{
+    background:   linear-gradient(to right, #ff8c00, #ff0000);
+}
+.modal-content{
+    border-color:  #ff8c00;
+}
+.modal-title{
+    color:white;
+}
 .feedback {
-
     margin: 0;
     padding: 0;
     display: flex;
@@ -22,7 +30,7 @@
 
 .feedback-button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background: linear-gradient(to right, #ff8c00, #ff0000);
     color: white;
     border: none;
     border-radius: 5px;

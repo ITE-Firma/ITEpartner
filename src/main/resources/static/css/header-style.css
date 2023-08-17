@@ -1,3 +1,7 @@
+.imgSlider{
+    width: 400px;
+    height: 300px;
+}
 .header {
     display: flex;
     align-items: center;
