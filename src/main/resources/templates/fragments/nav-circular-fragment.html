@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-      <html lang="en">
-      <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-          <link rel="stylesheet" href="/css/nav-circular.css">
-      <title>Circular Button Menu</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav-circular.css">
+    <title>Circular Button Menu</title>
 </head>
 <body>
 <div class="container text-center mt-5 ">
+<<<<<<< Updated upstream
   <div class="button-container position-relative ">
     <button class="circular-button btn" id="main-button"> Menu</button>
     <div class="menu" id="menu">
@@ -16,84 +17,115 @@
       <button class="menu-option btn btn-light" id="option-2"><a class="no-underline" href="/api/v1/user/referenzen">Referenzen</a></button>
       <button class="menu-option btn btn-light" id="option-3"><a class="no-underline" href="/api/v1/user/Kontakt">Kontakt</a></button>
       <button class="menu-option btn btn-light" id="option-4"><a class="no-underline" href="/api/v1/user/impressum">Impressum</a></button>
+=======
+    <div class="button-container position-relative ">
+        <button class="circular-button btn" id="main-button"> Menu</button>
+        <div class="menu" id="menu">
+            <button class="menu-option btn btn-light" id="option-1">Dienstleisungen</button>
+            <a class="no-underline" href="/api/v1/user/referenzen">
+                <button class="menu-option btn btn-light" id="option-2">Referenzen</button>
+            </a>
+            <a class="no-underline" href="/api/v1/user/Kontakt">
+                <button class="menu-option btn btn-light" id="option-3">Kontakt</button>
+            </a>
+            <a class="no-underline" href="/api/v1/user/impressum">
+                <button class="menu-option btn btn-light" id="option-4">Impressum</button>
+            </a>
+        </div>
+        <div class="sub-menu" id="sub-menu">
+            <a class="no-underline" href="/api/v1/user/Auditierung">
+                <button class="sub-menu-option btn btn-light">Auditierung</button>
+            </a>
+            <a class="no-underline" href="/api/v1/user/Akustik">
+                <button class="sub-menu-option btn btn-light">Akustik</button>
+            </a>
+            <a class="no-underline" href="/api/v1/user/Beratung">
+                <button class="sub-menu-option btn btn-light">Beratung</button>
+            </a>
+            <a class="no-underline" href="/api/v1/user/HuST">
+                <button class="sub-menu-option btn btn-light">Hardwere & System Testing</button>
+            </a>
+            <a class="no-underline" href="/api/v1/user/Programierung">
+                <button class="sub-menu-option btn btn-light">Programierung</button>
+            </a>
+            <a class="no-underline" href="/api/v1/user/QuS">
+                <button class="sub-menu-option btn btn-light">Qualitätmangment</button>
+            </a>
+            <a class="no-underline" href="/api/v1/user/SHuK">
+                <button class="sub-menu-option btn btn-light">Smart-Home& Kommunikation</button>
+            </a>
+            <a class="no-underline" href="/api/v1/user/Engineering">
+                <button class="sub-menu-option btn btn-light">Engineering</button>
+            </a>
+        </div>
+>>>>>>> Stashed changes
     </div>
-    <div class="sub-menu" id="sub-menu">
-        <a class="no-underline" href="/api/v1/user/Auditierung"><button class="sub-menu-option btn btn-light" >Auditierung</button></a>
-        <a class="no-underline" href="/api/v1/user/Akustik"> <button class="sub-menu-option btn btn-light">Akustik</button></a>
-        <a class="no-underline" href="/api/v1/user/Beratung"><button class="sub-menu-option btn btn-light">Beratung</button></a>
-        <a class="no-underline" href="/api/v1/user/HuST"><button class="sub-menu-option btn btn-light">Hardwere & System Testing</button></a>
-        <a class="no-underline" href="/api/v1/user/Programierung"><button class="sub-menu-option btn btn-light">Programierung</button></a>
-        <a class="no-underline" href="/api/v1/user/QuS"><button class="sub-menu-option btn btn-light">Qualitätmangment</button></a>
-        <a class="no-underline" href="/api/v1/user/SHuK"><button class="sub-menu-option btn btn-light">Smart-Home& Kommunikation</button></a>
-        <a class="no-underline" href="/api/v1/user/Engineering"><button class="sub-menu-option btn btn-light">Engineering</button></a>
-    </div>
-  </div>
 </div>
 <script>
-  const mainButton = document.getElementById('main-button');
-  const menu = document.getElementById('menu');
-  const subMenu = document.getElementById('sub-menu');
-  const menuOptions = document.querySelectorAll('.menu-option');
-  const subMenuOptions = document.querySelectorAll('.sub-menu-option');
-  const option1 = document.getElementById('option-1');
+    const mainButton = document.getElementById('main-button');
+    const menu = document.getElementById('menu');
+    const subMenu = document.getElementById('sub-menu');
+    const menuOptions = document.querySelectorAll('.menu-option');
+    const subMenuOptions = document.querySelectorAll('.sub-menu-option');
+    const option1 = document.getElementById('option-1');
 
-  mainButton.addEventListener('click', () => {
-    if (menu.classList.contains('active')) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
+    mainButton.addEventListener('click', () => {
+        if (menu.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
 
-  document.addEventListener('click', (event) => {
-    if (!event.target.closest('.button-container')) {
-      closeMenu();
-    }
-  });
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.button-container')) {
+            closeMenu();
+        }
+    });
 
-  option1.addEventListener('click', () => {
-    if (!subMenu.classList.contains('active')) {
-      openSubMenu();
-    } else {
-      closeSubMenu();
-    }
-  });
+    option1.addEventListener('click', () => {
+        if (!subMenu.classList.contains('active')) {
+            openSubMenu();
+        } else {
+            closeSubMenu();
+        }
+    });
 
-  function openMenu() {
-    menu.classList.add('active');
-    mainButton.classList.add('active');
-    setTimeout(() => {
-      menuOptions.forEach((option, index) => {
+    function openMenu() {
+        menu.classList.add('active');
+        mainButton.classList.add('active');
         setTimeout(() => {
-          option.classList.add('active');
-        }, index * 100);
-      });
-    }, 100);
-  }
+            menuOptions.forEach((option, index) => {
+                setTimeout(() => {
+                    option.classList.add('active');
+                }, index * 100);
+            });
+        }, 100);
+    }
 
-  function closeMenu() {
-    menu.classList.remove('active');
-    subMenu.classList.remove('active');
-    mainButton.classList.remove('active');
-    menuOptions.forEach(option => option.classList.remove('active'));
-    subMenuOptions.forEach(option => option.classList.remove('active'));
-  }
+    function closeMenu() {
+        menu.classList.remove('active');
+        subMenu.classList.remove('active');
+        mainButton.classList.remove('active');
+        menuOptions.forEach(option => option.classList.remove('active'));
+        subMenuOptions.forEach(option => option.classList.remove('active'));
+    }
 
-  function openSubMenu() {
-    subMenu.classList.add('active');
-    setTimeout(() => {
-      subMenuOptions.forEach((option, index) => {
+    function openSubMenu() {
+        subMenu.classList.add('active');
         setTimeout(() => {
-          option.classList.add('active');
-        }, index * 100);
-      });
-    }, 100);
-  }
+            subMenuOptions.forEach((option, index) => {
+                setTimeout(() => {
+                    option.classList.add('active');
+                }, index * 100);
+            });
+        }, 100);
+    }
 
-  function closeSubMenu() {
-    subMenu.classList.remove('active');
-    subMenuOptions.forEach(option => option.classList.remove('active'));
-  }
+    function closeSubMenu() {
+        subMenu.classList.remove('active');
+        subMenuOptions.forEach(option => option.classList.remove('active'));
+    }
 </script>
 </body>
 </html>
