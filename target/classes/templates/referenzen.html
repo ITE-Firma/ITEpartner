@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav-top-style.css">
+    <link rel="stylesheet" href="/css/nav-circular.css">
+    <link rel="stylesheet" href="/css/header-style.css">
+    <link rel="stylesheet" href="/css/index-style.css">
+    <link rel="stylesheet" href="/css/feedback-style.css">
+    <title>Referenzen</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/img/ITE-logo.png"
+                 alt="Logo" height="40">
+        </a>
+        <div class="navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link navbar-link" href="#">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link">|</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-link" href="#">Deutschland</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div style="margin-top: 20px"></div>
+<div th:replace="fragments/header-fragment::div" ></div>
+
+<section class="image-text-section" style="margin-top: 80px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Referenzen</h2>
+                <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation4">
+                    <div class="click-to-expand">
+                        <p style="padding-left: 10px; padding-top: 10px"> Referenzen
+                            <strong class="plus-sign">+</strong></p>
+                    </div>
+                </div>
+                <div id="explanation4" class="collapse">
+                    <p class="text_mergin">Wir sind ein junges, flexibles, Entwicklungsdienstleister Team für QM, QS,
+                        Hardware- und System testing. Unsere Expertise zeigt langjährige Erfahrung aus dem automobilen
+                        Umfeld im In- sowie Ausland. Wir nehmen uns die Zeit und stellen uns der Herausforderung. Wir
+                        unterstützen sie von der ersten Planung bis hin zum Endprodukt. Mit gutem Gefühl, wenn es heißt,
+                        professionelle Hilfe und in allen Belangen. Wir sprechen ihre Sprache.
+                        Alleinstellungsmerkmale:</p>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>★ Erfahrungen seit mehr als 10 Jahren bei HELLA, einem erfolgreichen internationalen
+                            Automobilzulieferer in der Entwicklung von namhaften Produkten für große OEMs wie VW, AUDI,
+                            PORSCHE, SCANIA, MAN, DAIMLER, IVECO.
+                        </li>
+                        <li>★ Erfolgreiche Projekte im Bereich Smart Home bei der Firma GIRA</li>
+                        <li>★ Durchführung von mehreren Einsätzen im internationalen Umfeld (USA, Malaysia, Slowenien,
+                            Bulgarien, Rumänien).
+                        </li>
+                    </ul>
+                    <p class="text_mergin">Freuen uns auf jede Anfrage. Bitte nehmen Sie Kontakt mit uns auf. Wir
+                        werden uns umgehend bei Ihnen melden. Ihr ITE Industrial Testing and Engineering Team</p>
+                </div>
+                <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation2">
+                    <div class="click-to-expand"
+                         style="background-color: #EAEAF5; height: 40px; color: #200A7A; margin-top: 10px ">
+                        <p style="padding-left: 10px; padding-top: 10px"> Zertifikate
+                            <strong class="plus-sign">+</strong></p>
+                    </div>
+                </div>
+                <div id="explanation2" class="collapse">
+                    <p class="text_mergin"></p>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>★ TÜV Zertifikat in Auditierung gemäß ISO 9001</li>
+                        <li>★ TÜV Zertifikat als Six Sigma green Belt</li>
+                        <li>★ Python Master Kurs Zertifikat</li>
+                        <li>★ LMK5/LMK6 Kamera und LabSoft Zertifikat</li>
+                        <li>★ Zertifikat Ali für Bordnetz Prüfungen</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/img/mangment.jpg"
+                     alt="Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gradient-div">
+    <h3 class="gradient-text">Haben Sie Interesse?</h3>
+    <button class="gradient-button">Kontakt</button>
+</div>
+
+<div th:replace="fragments/nav-circular-fragment.html::div"></div>
+<div th:replace="fragments/newsletter-fragment.html::div"></div>
+<div th:replace="fragments/footer-fragment.html::footer"></div>
+<div th:replace="fragments/feedback-fragment::div"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/nav-circular-script.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

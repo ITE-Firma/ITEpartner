@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav-top-style.css">
+    <link rel="stylesheet" href="/css/nav-circular.css">
+    <link rel="stylesheet" href="/css/header-style.css">
+    <link rel="stylesheet" href="/css/index-style.css">
+    <link rel="stylesheet" href="/css/feedback-style.css">
+    <title>Impressum</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/img/ITE-logo.png"
+                 alt="Logo" height="40">
+        </a>
+        <div class="navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link navbar-link" href="#">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link">|</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-link" href="#">Deutschland</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div style="margin-top: 20px"></div>
+<div th:replace="fragments/header-fragment::div" ></div>
+
+<section class="image-text-section" style="margin-top: 80px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Impressum</h1>
+                <h2>IT-Logik & Co. KG</h2>
+                <div>
+                    <p>
+                    <p>
+                        Max Mustermann<br>
+                        Musterstraße 123<br>
+                        12345 Musterstadt<br>
+                        E-Mail: xxxxxxx@xxx.com<br><br>
+                        <strong>Handelsregister:</strong> xxxxxxxxxxxxxxxxxxxxxxx<br>
+                        <strong>Steuernummer:</strong> xxxxxxxxxxxxxxxxxxxx<br>
+                        <strong>Umsatzsteuer-Identifikationsnummer gemäß § 27 UStG:</strong> DE xxxxxxxxxx<br>
+                        <strong>Persönlich haftende Gesellschafterin:</strong> Cxxxxxxxxxxxxxxxxxxxx<br>
+                        <strong>Vertretungsberechtigte Geschäftsführer:</strong> xxxxxxxxxxxxxxxxxxxxxxx<br>
+                        <br><br>
+                    <h6>Allgemeine Geschäftsbedingungen (AGB) / Terms and Conditions</h6>
+                    <br><br>
+                    <ul>
+                        <li>
+                            Download AGB (Januar 2023, Deutsch, PDF)
+                        </li>
+                    </ul>
+                    <br><br>
+                    <h6>
+                        Haftung für Links
+                    </h6>
+                    <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss
+                        haben.
+                        Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+                        verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die
+                        verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft.
+                        Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente
+                        inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer
+                        Rechtsverletzung nicht zumutbar. Wenn wir Kenntnis von derartigen Rechtsverletzungen erlangen,
+                        werden wir derartige Links umgehend entfernen.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gradient-div">
+    <h3 class="gradient-text">Haben Sie Interesse?</h3>
+    <button class="gradient-button">Kontakt</button>
+</div>
+
+<div th:replace="fragments/nav-circular-fragment.html::div"></div>
+<div th:replace="fragments/newsletter-fragment.html::div"></div>
+<div th:replace="fragments/footer-fragment.html::footer"></div>
+<div th:replace="fragments/feedback-fragment::div"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/nav-circular-script.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

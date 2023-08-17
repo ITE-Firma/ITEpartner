@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav-top-style.css">
+    <link rel="stylesheet" href="/css/nav-circular.css">
+    <link rel="stylesheet" href="/css/header-style.css">
+    <link rel="stylesheet" href="/css/index-style.css">
+    <link rel="stylesheet" href="/css/cookies-style.css">
+    <link rel="stylesheet" href="/css/feedback-style.css">
+    <title>Home</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/img/ITE-logo.png"
+                 alt="Logo" height="40">
+        </a>
+        <div class="navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link navbar-link" href="#">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link">|</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-link" href="#">Deutschland</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div style="margin-top: 20px"></div>
+<div th:replace="fragments/header-fragment::div" ></div>
+
+<div th:replace="fragments/nav-circular-fragment.html::div"></div>
+
+
+<div id="events">
+    <div class="animate" style="max-width: 350mm; margin: 0 auto; padding: 40px; text-align: left;">
+        <h2>Willkommen bei ITE Industrial Testing and Engineering</h2>
+        <p class="custom-schrift">Wir sind ein junges und flexibles Entwicklungsdienstleister-Team für QM, QS, Hardware-
+            und System-Testing mit
+            langjähriger Erfahrung aus dem automobilen Umfeld im In- und Ausland. Unsere Expertise ermöglicht es uns,
+            Sie von der Planung bis zum Endprodukt professionell zu unterstützen und Ihre Herausforderungen anzugehen.
+            Wir sprechen Ihre Sprache und bieten Ihnen folgende Alleinstellungsmerkmale:</p>
+        <ul style="list-style-type: none; padding: 0;">
+            <li style="margin-bottom: 10px;">★ Zielorientierte und termingerechte Arbeitsweise</li>
+            <li style="margin-bottom: 10px;">★ Sehr hohe Qualität unserer Dienstleistungen</li>
+            <li style="margin-bottom: 10px;">★ Permanente Erreichbarkeit und schnelle Reaktionszeit auf Anfragen</li>
+            <li style="margin-bottom: 10px;">★ Kompetenz und ständige Weiterbildung</li>
+            <li style="margin-bottom: 10px;">★ Agiles Arbeiten zu einem fairen Preis</li>
+            <li>★ Flexibilität</li>
+        </ul>
+    </div>
+
+    <section class="image-text-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/img/mangment.jpg"
+                         alt="Image" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <div class="text-content">
+                        <h2>Zielorientierte und termingerechte Arbeitsweise</h2>
+                        <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation">
+                            <div class="click-to-expand"
+                                 style="background-color: #EAEAF5; height: 40px; color: #200A7A ;  ">
+                                <p style="padding-left: 10px; padding-top: 10px"> Kompetenz und ständige Weiterbildung
+                                    <strong class="plus-sign">+</strong></p>
+                            </div>
+                        </div>
+                        <div id="explanation" class="collapse">
+                            <p class="text_mergin">Wir sind ein junges und flexibles Entwicklungsdienstleister-Team für
+                                QM, QS, Hardware-
+                                und System-Testing mit
+                                langjähriger Erfahrung aus dem automobilen Umfeld im In- und Ausland. Unsere Expertise
+                                ermöglicht es uns,
+                                Sie von der Planung bis zum Endprodukt professionell zu unterstützen und Ihre
+                                Herausforderungen anzugehen.
+                                Wir sprechen Ihre Sprache und bieten Ihnen folgende Alleinstellungsmerkmale:</p>
+                        </div>
+
+                        <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation1">
+                            <div class="click-to-expand"
+                                 style="background-color: #EAEAF5; height: 40px; color: #200A7A; margin-top: 10px ">
+                                <p style="padding-left: 10px; padding-top: 10px"> Kompetenz und ständige Weiterbildung
+                                    <strong class="plus-sign">+</strong></p>
+                            </div>
+                        </div>
+                        <div id="explanation1" class="collapse">
+                            <p class="text_mergin">Wir sind ein junges und flexibles Entwicklungsdienstleister-Team für
+                                QM, QS, Hardware-
+                                und System-Testing mit
+                                langjähriger Erfahrung aus dem automobilen Umfeld im In- und Ausland. Unsere Expertise
+                                ermöglicht es uns,
+                                Sie von der Planung bis zum Endprodukt professionell zu unterstützen und Ihre
+                                Herausforderungen anzugehen.
+                                Wir sprechen Ihre Sprache und bieten Ihnen folgende Alleinstellungsmerkmale:</p>
+                        </div>
+
+                        <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation2">
+                            <div class="click-to-expand"
+                                 style="background-color: #EAEAF5; height: 40px; color: #200A7A; margin-top: 10px ">
+                                <p style="padding-left: 10px; padding-top: 10px"> Kompetenz und ständige Weiterbildung
+                                    <strong class="plus-sign">+</strong></p>
+                            </div>
+                        </div>
+                        <div id="explanation2" class="collapse">
+                            <p class="text_mergin">Wir sind ein junges und flexibles Entwicklungsdienstleister-Team für
+                                QM, QS, Hardware-
+                                und System-Testing mit
+                                langjähriger Erfahrung aus dem automobilen Umfeld im In- und Ausland. Unsere Expertise
+                                ermöglicht es uns,
+                                Sie von der Planung bis zum Endprodukt professionell zu unterstützen und Ihre
+                                Herausforderungen anzugehen.
+                                Wir sprechen Ihre Sprache und bieten Ihnen folgende Alleinstellungsmerkmale:</p>
+                        </div>
+                        <style>
+                            .plus-sign {
+                                float: right;
+                                font-size: 18px;
+                                margin-right: 10px;
+                            }
+                        </style>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-text-section" style="margin-top: 80px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Zielorientierte und termingerechte Arbeitsweise</h2>
+                    <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation4">
+                        <div class="click-to-expand">
+                            <p style="padding-left: 10px; padding-top: 10px"> Kompetenz und ständige Weiterbildung
+                                <strong class="plus-sign">+</strong></p>
+                        </div>
+                    </div>
+                    <div id="explanation4" class="collapse">
+                        <p class="text_mergin">Wir sind ein junges und flexibles Entwicklungsdienstleister-Team für QM,
+                            QS, Hardware-
+                            und System-Testing mit
+                            langjähriger Erfahrung aus dem automobilen Umfeld im In- und Ausland. Unsere Expertise
+                            ermöglicht es uns,
+                            Sie von der Planung bis zum Endprodukt professionell zu unterstützen und Ihre
+                            Herausforderungen anzugehen.
+                            Wir sprechen Ihre Sprache und bieten Ihnen folgende Alleinstellungsmerkmale:</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="/img/mangment.jpg"
+                         alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="gradient-div">
+    <h3 class="gradient-text">Haben Sie Interesse?</h3>
+    <button class="gradient-button">Kontakt</button>
+</div>
+
+<!-- FAQ Section -->
+<div class="FAQ" id="FAQ">
+    <div class="animate">
+        <h2 class="text-center" data-aos="fade-down" s>Häufig gestellte Fragen</h2>
+        <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation5">
+            <div class="click-to-expand" style="background-color: #EAEAF5; height: 40px; color: #200A7A ;  ">
+                <p style="padding-left: 10px; padding-top: 10px"> Kompetenz und ständige Weiterbildung <strong
+                        class="plus-sign">+</strong></p>
+            </div>
+        </div>
+        <div id="explanation5" class="collapse">
+            <p class="text_mergin">Wir sind ein junges und flexibles Entwicklungsdienstleister-Team für QM, QS,
+                Hardware-
+                und System-Testing mit
+                langjähriger Erfahrung aus dem automobilen Umfeld im In- und Ausland. Unsere Expertise ermöglicht es
+                uns,
+                Sie von der Planung bis zum Endprodukt professionell zu unterstützen und Ihre Herausforderungen
+                anzugehen.
+                Wir sprechen Ihre Sprache und bieten Ihnen folgende Alleinstellungsmerkmale:</p>
+        </div>
+        <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation6">
+            <div class="click-to-expand" style="background-color: #EAEAF5; height: 40px; color: #200A7A ;  ">
+                <p style="padding-left: 10px; padding-top: 10px"> Kompetenz und ständige Weiterbildung <strong
+                        class="plus-sign">+</strong></p>
+            </div>
+        </div>
+        <div id="explanation6" class="collapse">
+            <p class="text_mergin">Wir sind ein junges und flexibles Entwicklungsdienstleister-Team für QM, QS,
+                Hardware-
+                und System-Testing mit
+                langjähriger Erfahrung aus dem automobilen Umfeld im In- und Ausland. Unsere Expertise ermöglicht es
+                uns,
+                Sie von der Planung bis zum Endprodukt professionell zu unterstützen und Ihre Herausforderungen
+                anzugehen.
+                Wir sprechen Ihre Sprache und bieten Ihnen folgende Alleinstellungsmerkmale:</p>
+        </div>
+        <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation7">
+            <div class="click-to-expand" style="background-color: #EAEAF5; height: 40px; color: #200A7A ;  ">
+                <p style="padding-left: 10px; padding-top: 10px"> Kompetenz und ständige Weiterbildung <strong
+                        class="plus-sign">+</strong></p>
+            </div>
+        </div>
+        <div id="explanation7" class="collapse">
+            <p class="text_mergin">Wir sind ein junges und flexibles Entwicklungsdienstleister-Team für QM, QS,
+                Hardware-
+                und System-Testing mit
+                langjähriger Erfahrung aus dem automobilen Umfeld im In- und Ausland. Unsere Expertise ermöglicht es
+                uns,
+                Sie von der Planung bis zum Endprodukt professionell zu unterstützen und Ihre Herausforderungen
+                anzugehen.
+                Wir sprechen Ihre Sprache und bieten Ihnen folgende Alleinstellungsmerkmale:</p>
+        </div>
+    </div>
+</div>
+
+<div id="newsletter" style="padding: 40px 0;">
+    <div class="animate" style="max-width: 210mm; margin: 0 auto; text-align: center; color: #fff;">
+        <h2 style="color: black">Abonnieren Sie unseren Newsletter</h2>
+        <p class="custom-schrift" style="color: black">Bleiben Sie auf dem Laufenden über unsere neuesten Angebote und
+            Updates.</p>
+        <form action="YOUR_NEWSLETTER_FORM_ACTION_URL" method="POST" class="mt-4">
+            <div class="input-group">
+                <input type="email" name="email" class="form-control" placeholder="Ihre E-Mail-Adresse" required>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Anmelden</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div th:replace="fragments/cookies-fragment::div"></div>
+<div th:replace="fragments/feedback-fragment::div"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/nav-circular-script.js"></script>
+<script src="/js/cookies-script.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<div th:replace="fragments/footer-fragment.html::footer"></div>
+
+</body>
+
+</html>
