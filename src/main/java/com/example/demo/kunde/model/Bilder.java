@@ -10,29 +10,47 @@ public class Bilder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Lob
+
     private byte[] logo;
     @Lob
+
     private byte[] welcome;
     @Lob
+
     private byte[] aboutus;
     @Lob
+
     private byte[] referenzen;
     @Lob
+
     private byte[] auditierung;
     @Lob
+
     private byte[] akustik;
     @Lob
+
     private byte[] beratung;
     @Lob
+
     private byte[] engineering;
     @Lob
+
     private byte[] hust;
     @Lob
+
     private byte[] programierung;
     @Lob
+
     private byte[] projecte;
     @Lob
+
     private byte[] qus;
+    @Lob
+    private byte[] slide1;
+    @Lob
+    private byte[] slide2;
+    @Lob
+    private byte[] slide3;
     @Lob
     private byte[] shuk;
     public Bilder() {
@@ -40,6 +58,30 @@ public class Bilder {
     }
     public Long getId() {
         return id;
+    }
+
+    public byte[] getSlide1() {
+        return slide1;
+    }
+
+    public void setSlide1(byte[] slide1) {
+        this.slide1 = slide1;
+    }
+
+    public byte[] getSlide2() {
+        return slide2;
+    }
+
+    public void setSlide2(byte[] slide2) {
+        this.slide2 = slide2;
+    }
+
+    public byte[] getSlide3() {
+        return slide3;
+    }
+
+    public void setSlide3(byte[] slide3) {
+        this.slide3 = slide3;
     }
 
     public void setId(Long id) {

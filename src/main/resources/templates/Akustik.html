@@ -34,8 +34,9 @@
         </div>
       </div>
       <div class="col-md-6">
-        <img   src="/img/mangment.jpg"
-               alt="Image" class="img-fluid contant-img">
+
+        <img th:if="${akustik}" th:src="${akustik}" alt="Image" class="img-fluid content-img">
+        <img th:unless="${akustik}" src="/images/placeholder.jpg" alt="Placeholder" class="img-fluid content-img">
       </div>
     </div>
   </div>

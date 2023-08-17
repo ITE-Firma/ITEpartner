@@ -48,7 +48,9 @@ public class ContactController {
         model=getAttribut("index",model);
         model=getAttribut("welcome",model);
         model=getAttribut("aboutus",model);
-        model=setSlider(model);
+        model= getAttribut("slide1",model);
+        model= getAttribut("slide2",model);
+        model= getAttribut("slide3",model);
         System.out.println("showForm sucess ");
         return "index";
     }
@@ -234,139 +236,175 @@ public class ContactController {
         htmlTemplate = htmlTemplate.replace("{{frage}}", frage);
         return htmlTemplate;
     }
-    public Model getAttribut(String s, Model m){
+    public Model getAttribut(String s, Model model){
+        String base64Image ;
+        String imageFormat ;
         switch(s) {
             case "index":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("logoImage", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getLogo()));
-                 else
-                    m.addAttribute("logoImage", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getLogo() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getLogo());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getLogo()) ? "jpeg" : "png";
+                    model.addAttribute("logoImage", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("logoImage", null); // Oder eine Standardabbildung
                 break;
 
             case "welcome":
-                m.addAttribute("mrEntity", bilderController.getBilder());
+                model.addAttribute("mrEntity", bilderController.getBilder());
                 if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("welcome", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getWelcome()));
+                    model.addAttribute("welcome", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getWelcome()));
                 else
-                    m.addAttribute("welcome", null); // Oder eine Standardabbildung
+                    model.addAttribute("welcome", null); // Oder eine Standardabbildung
                 break;
 
             case "aboutus":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("aboutus", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getAboutus()));
-                else
-                    m.addAttribute("aboutus", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getAboutus());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getAboutus()) ? "jpeg" : "png";
+                    model.addAttribute("logoImage", "data:image/" + imageFormat + ";base64," + base64Image);
+
                 break;
 
             case "akustik":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("akustik", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getAkustik()));
-                else
-                    m.addAttribute("akustik", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getAkustik() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getAkustik());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getAkustik()) ? "jpeg" : "png";
+                    model.addAttribute("akustik", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("akustik", null); // Oder eine Standardabbildung
                 break;
 
             case "auditierung":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("auditierung", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getAuditierung()));
-                else
-                    m.addAttribute("auditierung", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getAuditierung() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getAuditierung());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getAuditierung()) ? "jpeg" : "png";
+                    model.addAttribute("auditierung", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("auditierung", null); // Oder eine Standardabbildung
                 break;
 
             case "beratung":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("beratung", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getBeratung()));
-                else
-                    m.addAttribute("beratung", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getBeratung() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getBeratung());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getBeratung()) ? "jpeg" : "png";
+                    model.addAttribute("beratung", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("beratung", null); // Oder eine Standardabbildung
                 break;
 
             case "qus":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("qus", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getQus()));
-                else
-                    m.addAttribute("qus", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getQus() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getQus());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getQus()) ? "jpeg" : "png";
+                    model.addAttribute("qus", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("qus", null); // Oder eine Standardabbildung
                 break;
 
             case "shuk":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("shuk", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getShuk()));
-                else
-                    m.addAttribute("shuk", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getShuk() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getShuk());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getShuk()) ? "jpeg" : "png";
+                    model.addAttribute("shuk", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("shuk", null); // Oder eine Standardabbildung
                 break;
 
             case "referenzen":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("referenzen", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getReferenzen()));
-                else
-                    m.addAttribute("referenzen", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getReferenzen() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getReferenzen());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getReferenzen()) ? "jpeg" : "png";
+                    model.addAttribute("referenzen", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("referenzen", null); // Oder eine Standardabbildung
                 break;
 
             case "projecte":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("projecte", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getProjecte()));
-                else
-                    m.addAttribute("projecte", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getProjecte() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getProjecte());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getProjecte()) ? "jpeg" : "png";
+                    model.addAttribute("projecte", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("projecte", null); // Oder eine Standardabbildung
                 break;
 
             case "programierung":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("programierung", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getProgramierung()));
-                else
-                    m.addAttribute("programierung", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getProgramierung() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getProgramierung());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getProgramierung()) ? "jpeg" : "png";
+                    model.addAttribute("programierung", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("programierung", null); // Oder eine Standardabbildung
                 break;
 
             case "engineering":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("engineering", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getEngineering()));
-                else
-                    m.addAttribute("engineering", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getEngineering() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getEngineering());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getEngineering()) ? "jpeg" : "png";
+                    model.addAttribute("engineering", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("engineering", null); // Oder eine Standardabbildung
                 break;
             case "hust":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("hust", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getHust()));
-                else
-                    m.addAttribute("hust", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                if (bilderController.getBilder().getHust() != null) {
+                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getHust());
+                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getHust()) ? "jpeg" : "png";
+                    model.addAttribute("hust", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("hust", null); // Oder eine Standardabbildung
                 break;
             case "slide1":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("slide1", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getHust()));
-                else
-                    m.addAttribute("slide1", null); // Oder eine Standardabbildung
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                System.out.println(bilderController.getBilder().getSlide1() );
+                if (bilderController.getBilder().getSlide1() != null) {
+                    base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getSlide1());
+                    imageFormat = bilderController.isJpeg(bilderController.getBilder().getSlide1()) ? "jpeg" : "png";
+                    model.addAttribute("slide1", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
+                    model.addAttribute("slide1", null); // Oder eine Standardabbildung
                 break;
             case "slide2":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("slide2", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getHust()));
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                System.out.println(bilderController.getBilder().getSlide2() );
+                if (bilderController.getBilder().getSlide2() != null) {
+                    base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getSlide2());
+                    imageFormat = bilderController.isJpeg(bilderController.getBilder().getSlide2()) ? "jpeg" : "png";
+                    model.addAttribute("slide2", "data:image/" + imageFormat + ";base64," + base64Image);
+                }
                 else
-                    m.addAttribute("slide2", null); // Oder eine Standardabbildung
+                    model.addAttribute("slide2", null); // Oder eine Standardabbildung
                 break;
             case "slide3":
-                m.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    m.addAttribute("slide3", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getHust()));
+                model.addAttribute("mrEntity", bilderController.getBilder());
+                System.out.println(bilderController.getBilder().getSlide3() );
+                if (bilderController.getBilder().getSlide3() != null) {
+                    base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getSlide3());
+                    imageFormat = bilderController.isJpeg(bilderController.getBilder().getSlide3()) ? "jpeg" : "png";
+                    model.addAttribute("slide3", "data:image/" + imageFormat + ";base64," + base64Image);
+                }
                 else
-                    m.addAttribute("slide3", null); // Oder eine Standardabbildung
+                    model.addAttribute("slide3", null); // Oder eine Standardabbildung
                 break;
 
         }
-        return m;
+        return model;
     }
-    public Model setSlider( Model m){
-        m= getAttribut("slide1",m);
-        m= getAttribut("slide2",m);
-        m= getAttribut("slide3",m);
-        return m;
+    public Model setSlider( Model model){
+        model= getAttribut("slide1",model);
+        model= getAttribut("slide2",model);
+        model= getAttribut("slide3",model);
+        return model;
     }
 }

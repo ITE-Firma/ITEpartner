@@ -48,98 +48,143 @@ public class BilderController {
 
         // Logo
         if (bilder.getLogo() != null) {
-            model.addAttribute("logoImage", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getLogo()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getLogo());
+            String imageFormat = isJpeg(bilder.getLogo()) ? "jpeg" : "png";
+            model.addAttribute("logoImage", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("logoImage", null); // Oder eine Standardabbildung
         }
 
         // Welcome
         if (bilder.getWelcome() != null) {
-            model.addAttribute("welcome", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getWelcome()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getWelcome());
+            String imageFormat = isJpeg(bilder.getWelcome()) ? "jpeg" : "png";
+            model.addAttribute("welcome", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("welcome", null); // Oder eine Standardabbildung
         }
 
         // aboutus
         if (bilder.getAboutus() != null) {
-            model.addAttribute("aboutus", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getAboutus()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getAboutus());
+            String imageFormat = isJpeg(bilder.getAboutus()) ? "jpeg" : "png";
+            model.addAttribute("aboutus", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("aboutus", null); // Oder eine Standardabbildung
         }
 
         // Akustik
         if (bilder.getAkustik() != null) {
-            model.addAttribute("akustik", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getAkustik()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getAkustik());
+            String imageFormat = isJpeg(bilder.getAkustik()) ? "jpeg" : "png";
+            model.addAttribute("akustik", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("akustik", null); // Oder eine Standardabbildung
         }
 
         // Auditierung
         if (bilder.getAuditierung() != null) {
-            model.addAttribute("auditierung", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getAuditierung()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getAuditierung());
+            String imageFormat = isJpeg(bilder.getAuditierung()) ? "jpeg" : "png";
+            model.addAttribute("auditierung", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("auditierung", null); // Oder eine Standardabbildung
         }
 
         // Beratung
         if (bilder.getBeratung() != null) {
-            model.addAttribute("beratung", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getBeratung()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getBeratung());
+            String imageFormat = isJpeg(bilder.getBeratung()) ? "jpeg" : "png";
+            model.addAttribute("beratung", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("beratung", null); // Oder eine Standardabbildung
         }
 
         // qus
         if (bilder.getQus() != null) {
-            model.addAttribute("qus", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getQus()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getQus());
+            String imageFormat = isJpeg(bilder.getQus()) ? "jpeg" : "png";
+            model.addAttribute("qus", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("qus", null); // Oder eine Standardabbildung
         }
 
         // shuk
         if (bilder.getShuk() != null) {
-            model.addAttribute("shuk", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getShuk()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getShuk());
+            String imageFormat = isJpeg(bilder.getShuk()) ? "jpeg" : "png";
+            model.addAttribute("shuk", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("shuk", null); // Oder eine Standardabbildung
         }
 
         // referenzen
         if (bilder.getReferenzen() != null) {
-            model.addAttribute("referenzen", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getReferenzen()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getReferenzen());
+            String imageFormat = isJpeg(bilder.getReferenzen()) ? "jpeg" : "png";
+            model.addAttribute("referenzen", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("referenzen", null); // Oder eine Standardabbildung
         }
 
         // projecte
         if (bilder.getProjecte() != null) {
-            model.addAttribute("projecte", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getProjecte()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getShuk());
+            String imageFormat = isJpeg(bilder.getShuk()) ? "jpeg" : "png";
+            model.addAttribute("projecte", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("projecte", null); // Oder eine Standardabbildung
         }
 
         // programierung
         if (bilder.getProgramierung() != null) {
-            model.addAttribute("programierung", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getProgramierung()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getProgramierung());
+            String imageFormat = isJpeg(bilder.getProgramierung()) ? "jpeg" : "png";
+            model.addAttribute("programierung", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("programierung", null); // Oder eine Standardabbildung
         }
 
         // engineering
         if (bilder.getEngineering() != null) {
-            model.addAttribute("engineering", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getEngineering()));
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getEngineering());
+            String imageFormat = isJpeg(bilder.getEngineering()) ? "jpeg" : "png";
+            model.addAttribute("engineering", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
             model.addAttribute("engineering", null); // Oder eine Standardabbildung
         }
 
         // hust
         if (bilder.getHust() != null) {
-            model.addAttribute("hust", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilder.getHust()));
-        } else {
-            model.addAttribute("hust", null); // Oder eine Standardabbildung
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getHust());
+            String imageFormat = isJpeg(bilder.getHust()) ? "jpeg" : "png";
+            model.addAttribute("hust", "data:image/" + imageFormat + ";base64," + base64Image);        } else {
+        }
+        // sleider 1
+        if (bilder.getSlide1() != null) {
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getSlide1());
+            String imageFormat = isJpeg(bilder.getSlide1()) ? "jpeg" : "png";
+            model.addAttribute("slide1", "data:image/" + imageFormat + ";base64," + base64Image);        } else {
+        }
+        // sleider 2
+        if (bilder.getSlide2() != null) {
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getSlide2());
+            String imageFormat = isJpeg(bilder.getSlide2()) ? "jpeg" : "png";
+            model.addAttribute("slide2", "data:image/" + imageFormat + ";base64," + base64Image);        } else {
+        }
+        // sleider 3
+        if (bilder.getSlide3() != null) {
+            String base64Image = Base64.getEncoder().encodeToString(bilder.getSlide3());
+            String imageFormat = isJpeg(bilder.getSlide3()) ? "jpeg" : "png";
+            model.addAttribute("slide3", "data:image/" + imageFormat + ";base64," + base64Image);        } else {
         }
 
         return "test1";
     }
-
+    public boolean isJpeg(byte[] imageData) {
+        // JPEG-Bilder beginnen typischerweise mit den Bytes 0xFF, 0xD8
+        return (imageData.length >= 2 && imageData[0] == (byte) 0xFF && imageData[1] == (byte) 0xD8);
+    }
     @GetMapping("/showlogo")
     public ResponseEntity<byte[]> getImage() {
         byte[] imageData = bilder.getWelcome();
@@ -154,6 +199,30 @@ public class BilderController {
     public String uploadWelocm(@RequestParam("pictureFile") MultipartFile pictureFile) throws Exception {
         System.out.println(pictureFile.getBytes());
         bilder.setWelcome(pictureFile.getBytes());
+        mrEntityRepository.save(bilder);
+        System.out.println(bilder.getId());
+        return "redirect:/admin/bilder";
+    }
+    @PostMapping("/admin/slide1")
+    public String setSlide1(@RequestParam("pictureFile") MultipartFile pictureFile) throws Exception {
+        System.out.println(pictureFile.getBytes());
+        bilder.setSlide1(pictureFile.getBytes());
+        mrEntityRepository.save(bilder);
+        System.out.println(bilder.getId());
+        return "redirect:/admin/bilder";
+    }
+    @PostMapping("/admin/slide2")
+    public String setSlide2(@RequestParam("pictureFile") MultipartFile pictureFile) throws Exception {
+        System.out.println(pictureFile.getBytes());
+        bilder.setSlide2(pictureFile.getBytes());
+        mrEntityRepository.save(bilder);
+        System.out.println(bilder.getId());
+        return "redirect:/admin/bilder";
+    }
+    @PostMapping("/admin/slide3")
+    public String setSlide3(@RequestParam("pictureFile") MultipartFile pictureFile) throws Exception {
+        System.out.println(pictureFile.getBytes());
+        bilder.setSlide3(pictureFile.getBytes());
         mrEntityRepository.save(bilder);
         System.out.println(bilder.getId());
         return "redirect:/admin/bilder";

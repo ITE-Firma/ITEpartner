@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/index-style.css">
     <link rel="stylesheet" href="/css/cookies-style.css">
     <link rel="stylesheet" href="/css/feedback-style.css">
+    <link rel="stylesheet" href="/css/project-style.css">
     <title>Home</title>
 </head>
 <body>
@@ -40,8 +41,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img  th:src="${welcome}"
-                          alt="Image" class="img-fluid contant-img">
+                    <img th:if="${welcome}" th:src="${welcome}" alt="Image" class="img-fluid content-img">
+                    <img th:unless="${welcome}" src="/images/placeholder.jpg" alt="Placeholder" class="img-fluid content-img">
+
                 </div>
                 <div class="col-md-6">
                     <div class="text-content">
@@ -128,13 +130,18 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img  th:src="${aboutus}"
-                           alt="Image" class="img-fluid contant-img">
+                    <img th:if="${aboutus}" th:src="${aboutus}" alt="Image" class="img-fluid content-img">
+                    <img th:unless="${aboutus}" src="/images/placeholder.jpg" alt="Placeholder" class="img-fluid content-img">
+
+
                 </div>
             </div>
         </div>
     </section>
 </div>
+
+
+<div th:replace="fragments/project-fragment::div"></div>
 
 <div class="gradient-div">
     <h3 class="gradient-text">Haben Sie Interesse?</h3>
@@ -219,6 +226,7 @@
 <script src="/js/cookies-script.js"></script>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/project-script.js"></script>
 <div th:replace="fragments/footer-fragment.html::footer"></div>
 
 </body>

@@ -30,8 +30,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img   src="/img/mangment.jpg"
-                       alt="Image" class="img-fluid contant-img">
+                <img th:if="${auditierung}" th:src="${auditierung}" alt="Image" class="img-fluid content-img">
+                <img th:unless="${auditierung}" src="/images/placeholder.jpg" alt="Placeholder" class="img-fluid content-img">
+
             </div>
         </div>
     </div>
