@@ -1,131 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Registrierung</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="icon" href="/img/Logo.png" type="image/png">
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
-    <style>
-        .parallax {
-            background-image: url("/img/mangment.jpg");
-            min-height: 200px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Registrierung</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="icon" href="/img/Logo.png" type="image/png">
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+  <style>
+    .parallax
+    {
+      background-image: url("/img/1.png");
+      min-height: 200px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 </head>
 <body>
 <div class="parallax">
-    <h1 class="text-white text-center p-5">Willkommen bei unserer Autovermietung</h1>
-    <div class="container">
-        <form th:action="@{/api/v1/user/registration}" method="post" enctype="multipart/form-data">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#personal-data" data-toggle="tab"
-                       style="background-color: #5e00ff; color: white;">Personendaten</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#subscription" data-toggle="tab"
-                       style="background-color: #0066ff; color: white;"> Kontakt</a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div id="personal-data" class="tab-pane active">
-                    <!-- Personal data  -->
-                    <div class="card personal-data">
-                        <h2 class="card-header">Personendaten</h2>
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <label class="form-label">Titel:</label>
-                                <div class="btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" class="btn-check" name="titel" id="herr" value="Herr"
-                                               autocomplete="off">
-                                        <i class="bi bi-gender-male"></i> Herr
-                                    </label>
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" class="btn-check" name="titel" id="frau" value="Frau"
-                                               autocomplete="off">
-                                        <i class="bi bi-gender-female"></i> Frau
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="userName" class="form-label">Benutzername:</label>
-                                <input type="text" id="userName" name="userName" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">Vorname:</label>
-                                <input type="text" id="firstName" name="firstName" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="lastName" class="form-label">Nachname:</label>
-                                <input type="text" id="lastName" name="lastName" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="geburtsdatum" class="form-label">Geburtsdatum:</label>
-                                <input type="date" id="geburtsdatum" name="geburtsdatum" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="geburtsort" class="form-label">Geburtsort:</label>
-                                <input type="text" id="geburtsort" name="geburtsort" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+  <h1 class="text-white text-center p-5">Willkommen bei unserer Autovermietung</h1>
+  <div class="container">
+    <form th:action="@{/api/v1/user/registration}" method="post" enctype="multipart/form-data">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#personal-data" data-toggle="tab" style="background-color: #5e00ff; color: white;">Personendaten</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#subscription" data-toggle="tab" style="background-color: #0066ff; color: white;"> Kontakt</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div id="personal-data" class="tab-pane active">
+          <!-- Personal data  -->
+          <div class="card personal-data">
+            <h2 class="card-header">Personendaten</h2>
+            <div class="card-body">
+              <div class="mb-3">
+                <label class="form-label">Titel:</label>
+                <div class="btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-secondary">
+                    <input type="radio" class="btn-check" name="titel" id="herr" value="Herr" autocomplete="off">
+                    <i class="bi bi-gender-male"></i> Herr
+                  </label>
+                  <label class="btn btn-outline-secondary">
+                    <input type="radio" class="btn-check" name="titel" id="frau" value="Frau" autocomplete="off">
+                    <i class="bi bi-gender-female"></i> Frau
+                  </label>
                 </div>
-                <div id="subscription" class="tab-pane">
-                    <!-- Abonnement und Kontakt  -->
-                    <div class="card subscription">
-                        <h2 class="card-header">Kontakt</h2>
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <label for="adresse" class="form-label">Straße und Hausnummer:</label>
-                                <input type="text" id="adresse" name="adresse" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="plz" class="form-label">PLZ:</label>
-                                <input type="text" id="plz" name="plz" class="form-control" pattern="[0-9]+">
-                            </div>
-                            <div class="mb-3">
-                                <label for="stadt" class="form-label">Ort:</label>
-                                <input type="text" id="stadt" name="stadt" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="telefonnummer" class="form-label">Mobilnummer:</label>
-                                <input type="text" id="telefonnummer" name="telefonnummer" class="form-control"
-                                       pattern="[0-9]+">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">E-Mail:</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Passwort:</label>
-                                <input type="password" id="password" name="password" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary" style="background-color: green; color: white;"
-                                    type="submit">Registrieren
-                            </button>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <div class="mb-3">
+                <label for="userName" class="form-label">Benutzername:</label>
+                <input type="text" id="userName" name="userName" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="firstName" class="form-label">Vorname:</label>
+                <input type="text" id="firstName" name="firstName" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Nachname:</label>
+                <input type="text" id="lastName" name="lastName" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="geburtsdatum" class="form-label">Geburtsdatum:</label>
+                <input type="date" id="geburtsdatum" name="geburtsdatum" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="geburtsort" class="form-label">Geburtsort:</label>
+                <input type="text" id="geburtsort" name="geburtsort" class="form-control">
+              </div>
             </div>
-        </form>
-    </div>
+          </div>
+        </div>
+        <div id="subscription" class="tab-pane">
+          <!-- Abonnement und Kontakt  -->
+          <div class="card subscription">
+            <h2 class="card-header">Kontakt</h2>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="adresse" class="form-label">Straße und Hausnummer:</label>
+                <input type="text" id="adresse" name="adresse" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="plz" class="form-label">PLZ:</label>
+                <input type="text" id="plz" name="plz" class="form-control" pattern="[0-9]+">
+              </div>
+              <div class="mb-3">
+                <label for="stadt" class="form-label">Ort:</label>
+                <input type="text" id="stadt" name="stadt" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="telefonnummer" class="form-label">Mobilnummer:</label>
+                <input type="text" id="telefonnummer" name="telefonnummer" class="form-control" pattern="[0-9]+">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-Mail:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Passwort:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary" style="background-color: green; color: white;" type="submit">Registrieren</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 <!-- Footer -->
 <footer class="footer mt-auto py-3" style="position: fixed; bottom: 0; width: 100%;">
-    <div class="container">
-        <span>&copy; 2023 OMAR. All rights reserved.</span>
-    </div>
+  <div class="container">
+    <span>&copy; 2023 OMAR. All rights reserved.</span>
+  </div>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 <script src="vendor/jquery/jquery.min.js"></script>
