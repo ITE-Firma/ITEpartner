@@ -1,15 +1,20 @@
 package com.example.demo.kunde.Controller;
 
+import com.example.demo.kunde.model.Projekt;
+import com.example.demo.kunde.service.ProjektService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Base64;
+import java.util.List;
 
 @Controller
 public class HomeController {
     private final BilderController bilderController;
+    @Autowired
+    ProjektService projektService;
     @Autowired
     public HomeController(BilderController bilderController){
         this.bilderController=bilderController;
@@ -22,6 +27,8 @@ public class HomeController {
         model= getAttribut("slide1",model);
         model= getAttribut("slide2",model);
         model= getAttribut("slide3",model);
+        List<Projekt> projekte = projektService.getAllProjekte();
+        model.addAttribute("projekte", projekte);
         return "index";
     }
     @GetMapping("/api/v1/user/")
@@ -32,6 +39,8 @@ public class HomeController {
         model= getAttribut("slide1",model);
         model= getAttribut("slide2",model);
         model= getAttribut("slide3",model);
+        List<Projekt> projekte = projektService.getAllProjekte();
+        model.addAttribute("projekte", projekte);
         return "index";
     }
     public Model getAttribut(String s, Model model){

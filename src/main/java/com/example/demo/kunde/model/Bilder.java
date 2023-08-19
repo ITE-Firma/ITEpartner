@@ -10,7 +10,6 @@ public class Bilder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Lob
-
     private byte[] logo;
     @Lob
 
@@ -53,9 +52,11 @@ public class Bilder {
     private byte[] slide3;
     @Lob
     private byte[] shuk;
+
     public Bilder() {
 
     }
+
     public Long getId() {
         return id;
     }

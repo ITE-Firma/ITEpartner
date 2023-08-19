@@ -69,8 +69,6 @@
     }
 }
 
-
-
 .plus-sign {
     float: right;
     font-size: 24px;
@@ -84,17 +82,23 @@
         flex-direction: column; /* Stack elements vertically */
         align-items: center; /* Center items horizontally */
     }
-
+    .imgSlider{
+        width: 500px;
+        height: 300px
+    }
     .sliding-text,
     .sliding-image {
-        margin-top: 35%;
-        width: 100%; /* Take up full width */
-    }
 
+    }
+    .header {
+        height: 700px;
+    }
     .sliding-text {
         order: 1; /* Place the text below the image */
-        margin-top: 20px; /* Add some spacing between image and text */
+        margin-top: 2px; /* Add some spacing between image and text */
         text-align: center; /* Center the text horizontally */
+        width: 200px;
+        height: 300px;
     }
 
     .sliding-image {
