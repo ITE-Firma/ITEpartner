@@ -3,6 +3,7 @@
     position: relative;
     display: inline-block;
 }
+
 .circular-button {
     position: fixed;
     top: 400px;
@@ -17,15 +18,18 @@
     color: white;
     background: linear-gradient(#ff0000, #ff8c00, #ff0000);
 }
+
 .circular-button:hover {
     background-color: #0056b3;
     transform: scale(1.1);
     padding: 15px 25px;
 }
+
 .no-underline {
     text-decoration: none;
     color: #2e3636;
 }
+
 .circular-button.active {
     background-color: transparent;
     border-color: #3498db;
@@ -77,8 +81,7 @@
     width: auto;
     height: auto;
     margin-top: 10px; /* Add margin to create spacing between circular button and submenu */
-/
-display: none;
+    display: none;
     opacity: 0;
     transition: opacity 0.3s, transform 0.3s;
     transform: translateY(-10px);
