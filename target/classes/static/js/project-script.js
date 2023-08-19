@@ -18,3 +18,4 @@ document.querySelector('.last').addEventListener('click', () => {
     currentSlide = slides.length - 1;
     showSlide(currentSlide);
 });
+

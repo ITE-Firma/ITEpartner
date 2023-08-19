@@ -14,8 +14,8 @@
     <title>Home</title>
 </head>
 <body>
-<div th:replace="fragments/nav-top-fragment::nav" ></div>
-<div th:replace="fragments/header-fragment::div" ></div>
+<div th:replace="fragments/nav-top-fragment::nav"></div>
+<div th:replace="fragments/header-fragment::div"></div>
 <div th:replace="fragments/nav-circular-fragment.html::div"></div>
 
 
@@ -42,7 +42,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <img th:if="${welcome}" th:src="${welcome}" alt="Image" class="img-fluid content-img">
-                    <img th:unless="${welcome}" src="/images/placeholder.jpg" alt="Placeholder" class="img-fluid content-img">
+                    <img th:unless="${welcome}" src="/images/placeholder.jpg" alt="Placeholder"
+                         class="img-fluid content-img">
 
                 </div>
                 <div class="col-md-6">
@@ -131,7 +132,8 @@
                 </div>
                 <div class="col-md-6">
                     <img th:if="${aboutus}" th:src="${aboutus}" alt="Image" class="img-fluid content-img">
-                    <img th:unless="${aboutus}" src="/images/placeholder.jpg" alt="Placeholder" class="img-fluid content-img">
+                    <img th:unless="${aboutus}" src="/images/placeholder.jpg" alt="Placeholder"
+                         class="img-fluid content-img">
 
 
                 </div>
