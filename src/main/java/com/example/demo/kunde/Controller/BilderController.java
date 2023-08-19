@@ -1,7 +1,6 @@
 package com.example.demo.kunde.Controller;
 
 import com.example.demo.kunde.model.Bilder;
-import com.example.demo.kunde.model.Feedback;
 import com.example.demo.kunde.repository.BilderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Base64;
-import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -179,7 +177,7 @@ public class BilderController {
             model.addAttribute("slide3", "data:image/" + imageFormat + ";base64," + base64Image);        } else {
         }
 
-        return "test1";
+        return "UploadPortal";
     }
     public boolean isJpeg(byte[] imageData) {
         // JPEG-Bilder beginnen typischerweise mit den Bytes 0xFF, 0xD8

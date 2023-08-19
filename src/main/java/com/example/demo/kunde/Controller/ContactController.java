@@ -3,9 +3,11 @@ import com.example.demo.kunde.email.EmailSender;
 import com.example.demo.kunde.email.EmailService;
 import com.example.demo.kunde.model.Customer;
 import com.example.demo.kunde.model.Feedback;
+import com.example.demo.kunde.model.Projekt;
 import com.example.demo.kunde.regestrieren.token.RegistrationService;
 import com.example.demo.kunde.service.CustomerService;
 import com.example.demo.kunde.service.FeedbackService;
+import com.example.demo.kunde.service.ProjektService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Base64;
+import java.util.List;
 
 
 @Controller
@@ -34,6 +37,8 @@ public class ContactController {
     private CustomerService customerService;
     @Autowired
     private FeedbackService feedbackService;
+    @Autowired
+    ProjektService projektService;
 
     public ContactController(RegistrationService registrationService, SpringTemplateEngine templateEngine, EmailSender emailSender,EmailService emailService,BilderController bilderController) {
         this.registrationService = registrationService;
@@ -51,6 +56,8 @@ public class ContactController {
         model= getAttribut("slide1",model);
         model= getAttribut("slide2",model);
         model= getAttribut("slide3",model);
+        List<Projekt> projekte = projektService.getAllProjekte();
+        model.addAttribute("projekte", projekte);
         System.out.println("showForm sucess ");
         return "index";
     }
@@ -59,7 +66,7 @@ public class ContactController {
         model=getAttribut("index",model);
         model=setSlider(model);
         System.out.println("showProjects sucess ");
-        return "Projekte";
+        return "ProjektePortal";
     }
     @GetMapping("/QuS")
     public String showQuS(Model model) {

@@ -31,7 +31,7 @@ public class UserController{
         model.addAttribute("feedbacks", Feedbacks);
         model.addAttribute("customers", customers);
         model.addAttribute("users", users);
-        return "Admin";
+        return "AdminPortal";
     }
 
 }

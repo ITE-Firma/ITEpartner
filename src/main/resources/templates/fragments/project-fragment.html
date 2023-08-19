@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-<div class="nav-project">
+<div class="nav-project" >
     <div class="first-btn">
         <button class="first icon-transparent"><i class="fas fa-angle-double-left"></i></button>
     </div>
@@ -18,80 +18,27 @@
         <button class="last icon-transparent"><i class="fas fa-angle-double-right"></i></button>
     </div>
 </div>
+
 <div class="slideshow-container-project">
-    <div class="slide-project" style="transform: translateX(0);">
+    <!-- Iterate through each project -->
+    <div th:each="projekt : ${projekte}" class="slide-project" style="transform: translateX(0);">
         <div class="slide-content-project">
-            <h2 class="project-title">Projekt 1</h2>
-            <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Project-Scope-Management-Cover.jpg"
-                 alt="Projekt 1 Bild" style="max-width: 100%;">
+            <h4 class="project-title" th:text="${projekt.name}"></h4>
+            <img th:if="${projekt.logo}"
+                 th:src="@{/admin/projekte/image/{projectId}(projectId=${projekt.id})}" alt="Projekt Bild"
+                 style="width: 100%; height: 150px">
             <div class="slide-info-project">
-                <p>Status: <span class="status status-in-progress">In der Umsetzungsphase</span></p>
+                <p>Status: <span class="status status-in-progress" th:text="${projekt.details}"></span></p>
                 <div class="scroll-box">
-                    <div class="scroll-content">
-                        <ul>
-                            <li>Das Projekt 3 ist derzeit in der Planungsphase und hat einen Fortschritt von 30%</li><br>
-                            <li>Wir arbeiten daran, [tatsächliche Projektdetails einfügen].</li><br>
-                            <li>Die Planung ist entscheidend, um sicherzustellen, dass wir alle Aspekte sorgfältig durchdenken, bevor wir mit der Umsetzung beginnen.</li>
-                        </ul>
-                    </div>
+                    <div class="scroll-content" th:text="${projekt.beschreibung}"></div>
                 </div>
                 <div class="status-project">
                     <div class="status-label-project">Status:</div>
                     <div class="status-bar-project">
-                        <div class="status-progress-project" style="width: 80%;"></div>
+                        <div class="status-progress-project"
+                             th:style="'width: ' + ${projekt.status} + '%'"></div>
                     </div>
-                    <div class="status-percentage-project">80%</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slide-project" style="transform: translateX(-100%);">
-        <div class="slide-content-project">
-            <h2 class="project-title">Projekt 2</h2>
-            <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Project-Scope-Management-Cover.jpg"
-                 alt="Projekt 1 Bild" style="max-width: 100%;">
-            <div class="slide-info-project">
-                <p>Status: <span class="status status-in-progress">In der Optimierungsphase</span></p>
-                <div class="scroll-box">
-                    <div class="scroll-content">
-                        <ul>
-                            <li>Das Projekt 3 ist derzeit in der Planungsphase und hat einen Fortschritt von 30%</li><br>
-                            <li>Wir arbeiten daran, [tatsächliche Projektdetails einfügen].</li><br>
-                            <li>Die Planung ist entscheidend, um sicherzustellen, dass wir alle Aspekte sorgfältig durchdenken, bevor wir mit der Umsetzung beginnen.</li>
-                        </ul>
-                    </div>
-                </div>              <div class="status-project">
-                    <div class="status-label-project">Status:</div>
-                    <div class="status-bar-project">
-                        <div class="status-progress-project" style="width: 60%;"></div>
-                    </div>
-                    <div class="status-percentage-project">60%</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slide-project" style="transform: translateX(-200%);">
-        <div class="slide-content-project">
-            <h2 class="project-title">Projekt 3</h2>
-            <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Project-Scope-Management-Cover.jpg"
-                 alt="Projekt 1 Bild" style="max-width: 100%;">
-            <div class="slide-info-project">
-                <p>Details zum Projekt:</p>
-                <div class="scroll-box">
-                    <div class="scroll-content">
-                        <ul>
-                            <li>Das Projekt 3 ist derzeit in der Planungsphase und hat einen Fortschritt von 30%</li><br>
-                            <li>Wir arbeiten daran, [tatsächliche Projektdetails einfügen].</li><br>
-                            <li>Die Planung ist entscheidend, um sicherzustellen, dass wir alle Aspekte sorgfältig durchdenken, bevor wir mit der Umsetzung beginnen.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="status-project">
-                    <div class="status-label-project">Status:</div>
-                    <div class="status-bar-project">
-                        <div class="status-progress-project" style="width: 90%;"></div>
-                    </div>
-                    <div class="status-percentage-project">90%</div>
+                    <div class="status-percentage-project" th:text="${projekt.status} + '%'"></div>
                 </div>
             </div>
         </div>
