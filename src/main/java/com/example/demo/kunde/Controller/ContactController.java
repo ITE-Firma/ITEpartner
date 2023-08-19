@@ -259,7 +259,7 @@ public class ContactController {
 
             case "welcome":
                 model.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
+                if (bilderController.getBilder().getWelcome() != null)
                     model.addAttribute("welcome", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getWelcome()));
                 else
                     model.addAttribute("welcome", null); // Oder eine Standardabbildung
@@ -267,10 +267,13 @@ public class ContactController {
 
             case "aboutus":
                 model.addAttribute("mrEntity", bilderController.getBilder());
-
-                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getAboutus());
-                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getAboutus()) ? "jpeg" : "png";
+                if (bilderController.getBilder().getAboutus() != null) {
+                    base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getAboutus());
+                    imageFormat = bilderController.isJpeg(bilderController.getBilder().getAboutus()) ? "jpeg" : "png";
                     model.addAttribute("logoImage", "data:image/" + imageFormat + ";base64," + base64Image);
+                }
+                else
+                    model.addAttribute("welcome", null); // Oder eine Standardabbildung
 
                 break;
 

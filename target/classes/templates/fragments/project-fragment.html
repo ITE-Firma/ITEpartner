@@ -10,33 +10,32 @@
     </style>
 </head>
 <body>
-<div class="nav-project" >
+<div class="nav-project">
     <div class="first-btn">
-        <button class="first icon-transparent"><i class="fas fa-angle-double-left"></i></button>
+        <button class="first "><i class="fas fa-angle-double-left"></i><<</button>
     </div>
     <div class="last-btn">
-        <button class="last icon-transparent"><i class="fas fa-angle-double-right"></i></button>
+        <button class="last "><i class="fas fa-angle-double-right"></i>>></button>
     </div>
 </div>
-
 <div class="slideshow-container-project">
-    <!-- Iterate through each project -->
-    <div th:each="projekt : ${projekte}" class="slide-project" style="transform: translateX(0);">
+    <div  th:each="projekt : ${projekte}" class="slide-project" style="transform: translateX(0);">
         <div class="slide-content-project">
-            <h4 class="project-title" th:text="${projekt.name}"></h4>
+            <h2 class="project-title"  th:text="${projekt.name}"></h2>
             <img th:if="${projekt.logo}"
-                 th:src="@{/admin/projekte/image/{projectId}(projectId=${projekt.id})}" alt="Projekt Bild"
-                 style="width: 100%; height: 150px">
+                  th:src="@{/admin/projekte/image/{projectId}(projectId=${projekt.id})}" alt="Projekt Bild"
+                  style="width: 100%; height: 150px">
             <div class="slide-info-project">
                 <p>Status: <span class="status status-in-progress" th:text="${projekt.details}"></span></p>
                 <div class="scroll-box">
-                    <div class="scroll-content" th:text="${projekt.beschreibung}"></div>
+                    <div class="scroll-content" th:text="${projekt.beschreibung}">
+
+                    </div>
                 </div>
                 <div class="status-project">
                     <div class="status-label-project">Status:</div>
                     <div class="status-bar-project">
-                        <div class="status-progress-project"
-                             th:style="'width: ' + ${projekt.status} + '%'"></div>
+                        <div class="status-progress-project" th:style="'width: ' + ${projekt.status} + '%'"></div>
                     </div>
                     <div class="status-percentage-project" th:text="${projekt.status} + '%'"></div>
                 </div>
