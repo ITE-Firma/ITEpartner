@@ -37,6 +37,7 @@
 }
 
 .menu {
+    z-index: 1000;
     position: fixed;
     top: 400px;
     left: 135px;
@@ -57,7 +58,7 @@
 
 .menu-option,
 .sub-menu-option {
-
+    z-index: 1000;
     display: block;
     width: -webkit-fill-available;
     padding: 15px;
@@ -100,8 +101,8 @@
     cursor: pointer;
 }
 @media (max-width: 1616px) {
-   .container {
-       display: none;
+   .circular {
+      display: none;
    }
 
 }
