@@ -118,8 +118,8 @@
 <hr>
 
 
-            <div class="scrollable-container" th:each="projekt : ${projekte}">
-                <div class="scrollable-list" >
+            <div class="scrollable-container">
+                <div class="scrollable-list"  th:each="projekt : ${projekte}" >
                     <div class="card" >
                         <img th:if="${projekt.logo}"
                              th:src="@{/admin/projekte/image/{projectId}(projectId=${projekt.id})}" alt="Projekt Bild"
@@ -147,47 +147,48 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <!-- Hier können Sie den Inhalt Ihres Modals platzieren -->
-                            <!-- Beispielinhalt: Ein Formular zum Bearbeiten der Daten -->
-                            <form th:object="${projekt}" th:action="@{'/admin/project/edit/'+${projekt.id}}" method="post" class="project-form" style="margin-top: 100px"
-                                  >
-                                <input type="hidden" name="_method" value="POST" />
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="editModalLabel">Edit Project</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <!-- Hier können Sie Ihre Formularelemente für die Bearbeitung platzieren -->
-                                    <!-- Beispiel: -->
-                                    <label for="Projekname">Projektnamen:</label>
-                                    <input type="text" id="Projekname" name="name" th:value="${projekt.name}"/>
-                                    <hr>
-                                    <label for="Projekstatus">Projektstatus: (zahl eingeben )</label>
-                                    <input type="text" id="Projekstatus" name="status" th:value="${projekt.status}"/>
-                                    <hr>
-                                    <label for="Projekdetails">Projektdetails:</label>
-                                    <input type="text" id="Projekdetails" name="details" th:value="${projekt.details}"/>
-                                    <hr>
-                                    <label for="Projekbeschreibung">Projektbeschreibung:</label>
-                                    <input type="text" id="Projekbeschreibung" name="beschreibung" th:value="${projekt.beschreibung}"/>
+                    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <!-- Hier können Sie den Inhalt Ihres Modals platzieren -->
+                                <!-- Beispielinhalt: Ein Formular zum Bearbeiten der Daten -->
+                                <form th:object="${projekt}" th:action="@{'/admin/project/edit/'+${projekt.id}}" method="post" class="project-form" style="margin-top: 100px"
+                                >
+                                    <input type="hidden" name="_method" value="POST" />
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editModalLabel">Edit Project</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Hier können Sie Ihre Formularelemente für die Bearbeitung platzieren -->
+                                        <!-- Beispiel: -->
+                                        <label for="Projekname">Projektnamen:</label>
+                                        <input type="text" id="Projekname" name="name" th:value="${projekt.name}"/>
+                                        <hr>
+                                        <label for="Projekstatus">Projektstatus: (zahl eingeben )</label>
+                                        <input type="text" id="Projekstatus" name="status" th:value="${projekt.status}"/>
+                                        <hr>
+                                        <label for="Projekdetails">Projektdetails:</label>
+                                        <input type="text" id="Projekdetails" name="details" th:value="${projekt.details}"/>
+                                        <hr>
+                                        <label for="Projekbeschreibung">Projektbeschreibung:</label>
+                                        <input type="text" id="Projekbeschreibung" name="beschreibung" th:value="${projekt.beschreibung}"/>
 
-                                    <!-- Weitere Formularelemente hier -->
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </form>
+                                        <!-- Weitere Formularelemente hier -->
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Modal -->
+
             </div>
         </main>
     </div>
