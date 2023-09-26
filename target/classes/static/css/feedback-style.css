@@ -1,0 +1,46 @@
+.modal-header{
+    background:   linear-gradient(to right, #ff8c00, #ff0000);
+}
+.modal-content{
+    border-color:  #ff8c00;
+}
+.modal-title{
+    color:white;
+}
+.feedback {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent;
+}
+
+.feedback-button-container {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: right center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ff8c00, #ff0000);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, transform 0.3s, padding 0.3s;
+}
+
+.feedback-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    padding: 15px 25px;
+}

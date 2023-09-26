@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/nav-top-style.css">
+    <link rel="stylesheet" href="/css/nav-circular.css">
+    <link rel="stylesheet" href="/css/header-style.css">
+    <link rel="stylesheet" href="/css/index-style.css">
+    <link rel="stylesheet" href="/css/feedback-style.css">
+    <title>Kontakt</title>
+</head>
+<body>
+
+<div th:replace="fragments/nav-top-fragment::nav" ></div>
+
+<div th:replace="fragments/header-fragment::div"></div>
+
+<section class="image-text-section" style="margin-top: 80px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Kontakt</h2>
+                <div class="contact-form">
+                    <form th:action="@{submit-form}" method="post">
+                        <div class="mb-3">
+                            <label for="form_salutation" class="form-label">Anrede</label>
+                            <select class="form-select" id="form_salutation" name="anrede" required>
+                                <option value="" disabled selected>Bitte wählen</option>
+                                <option value="Herr">Herr</option>
+                                <option value="Frau">Frau</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="form_Firstname" class="form-label">Vorname</label>
+                            <input type="text" class="form-control" id="form_Firstname" name="firstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="form_lastname" class="form-label">Nachname</label>
+                            <input type="text" class="form-control" id="form_lastname" name="lastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="form_email" class="form-label">E-Mail</label>
+                            <input type="email" class="form-control" id="form_email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="form_firma" class="form-label">Firma</label>
+                            <input type="text" class="form-control" id="form_firma" name="company">
+                        </div>
+                        <div class="mb-3">
+                            <label for="form_telefon" class="form-label">Telefon</label>
+                            <input type="tel" class="form-control" id="form_telefon" name="phoneNumber">
+                        </div>
+                        <div class="mb-3">
+                            <label for="form_need" class="form-label">Bitte wählen Sie Ihr Anliegen</label>
+                            <select class="form-select" id="form_need" name="interest" required>
+                                <option value="" disabled selected>Bitte wählen</option>
+                                <option value="umsatz">Umsatz</option>
+                                <option value="nebenberufliche-tätigkeit">Nebenberufliche Tätigkeit</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="form_message" class="form-label">Fragen</label>
+                            <textarea class="form-control" id="form_message" name="message" rows="5"></textarea>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="ja" id="agreement" name="agreement"
+                                   required>
+                            <label class="form-check-label" for="agreement">
+                                Ich bin einverstanden, dass meine Daten gemäß der Datenschutzerklärung gespeichert
+                                werden.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Absenden</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!-- Embed Google Maps iframe here -->
+                <iframe id="googleMap"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789!2d12.345678!3d12.345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDUzJzIyLjkiTiAxMsKwMzInMzkuOSJF!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <button id="calculateDistanceBtn" class="btn btn-secondary mt-3">Berechne Entfernung</button>
+                <p id="distanceResult" class="mt-2"></p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div th:replace="fragments/nav-circular-fragment.html::div"></div>
+<div th:replace="fragments/footer-fragment.html::footer"></div>
+<div th:replace="fragments/feedback-fragment::div"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/nav-circular-script.js"></script>
+<script src="/js/kontakt-script.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

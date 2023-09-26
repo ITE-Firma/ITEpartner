@@ -73,7 +73,7 @@ public class ContactController {
         model=getAttribut("index",model);
         model=setSlider(model);
         System.out.println("showDatenschutz sucess ");
-        return "ITE-Datenschutzerklärung";
+        return "ITE-Datenschutz";
     }
     @GetMapping("/agb")
     public String showAgb() {
