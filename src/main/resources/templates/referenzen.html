@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/nav-top-style.css">
     <link rel="stylesheet" href="/css/nav-circular.css">
     <link rel="stylesheet" href="/css/header-style.css">
@@ -71,14 +72,82 @@
 
             </div>
         </div>
+
+
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-10">
+                <h2>Was uns ausmacht</h2>
+                <p>
+                    Wir sind ein agiles, junges und erfahrenes Ingenieurs Team. Die sich mit vielen Dienstleistungen beschäftigt, sich stetig weiterentwickelt.
+                    Wir schätzen und Wertschätzen unsere Arbeit, unsere Kunden. Wir nehmen uns die Zeit und kümmern uns jede Angelegenheit, jede Aufgabe nehmen wir sehr ernst und handeln dementsprechend.
+                    Wir sprechen mehrere Sprachen, bringen viel Erfahrung aus dem automobilen, industriellen Umfeld mit.
+                </p>
+                <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation6">
+                    <div class="click-to-expand">
+                        <p style="padding-left: 10px; padding-top: 10px"> Unsere Erfahrungen auf einem Blick
+                            <strong class="plus-sign">+</strong></p>
+                    </div>
+                </div>
+                <div id="explanation6" class="collapse">
+                    <ul style="margin-top: 20px">
+                        <li><p>
+                            Erfahrungen seit mehr als 10 Jahren bei HELLA, einem erfolgreichem internationalen Automobilzulieferer in der Entwicklung von namhaften Produkten für große <Strong>OEM´s wie VW, AUDI, PORSCHE, SCANIA, MAN, DAIMLER, IVECO.</Strong>
+                        </p></li>
+                        <li><p>
+                            Erfolgreiche Projekte im Bereich Smart Home bei der Firma <Strong>GIRA.</Strong>
+                        </p></li>
+                        <li><p>
+                            Durchführung von mehreren Einsätzen im internationalen Umfeld (USA, Malaysia, Slowenien, Bulgarien, Rumänien).
+                        </p></li>
+                    </ul>
+                </div>
+                <p style="margin-top: 20px">
+                    Auf uns können sie zählen, wir versuchen jede Anfrage, jede Aufgabe zu 100% zu erfüllen und dabei für Sie die bestmögliche Lösung zu finden.
+                    Durch strategische Investitionen werden wir auch andere Dienstleistungen anbieten können, wie z.B.
+
+                </p>
+
+                <div class="expandable-content" data-bs-toggle="collapse" data-bs-target="#explanation7">
+                    <div class="click-to-expand">
+                        <p style="padding-left: 10px; padding-top: 10px"> Andere Dienstleistungen
+                            <strong class="plus-sign">+</strong></p>
+                    </div>
+                </div>
+                <div id="explanation7" class="collapse">
+                    <ul style="margin-top: 20px">
+                        <li><p>
+                          Bestückung von Prototypen und Prüfmuster in Kooperation
+                        </p></li>
+                        <li><p>
+                            3D Druck von mechanischen Teilen
+                        </p></li>
+                        <li><p>
+                            Inhouse Umwelt-Testing
+                        </p></li>
+                        <li><p>
+                            Kalibrierung von Prüfständen, Equipment und Klimaschränken
+                        </p></li>
+                        <li><p>
+                            Mitarbeiter und Aufgabenwachstum
+                        </p></li>
+                        <li><p>
+                            u.v.m.
+                        </p></li>
+                    </ul>
+                </div>
+                <p style="margin-top: 20px">
+                    Wir sind 6 Tage/Woche, von 9:00 Uhr– 17:00 Uhr erreichbar. Schreiben oder rufen Sie uns an.
+                </p>
+
+            </div>
+        </div>
     </div>
 </section>
 
 <div class="gradient-div">
-    <h3 class="gradient-text">Haben Sie Interesse?</h3>
-    <button class="gradient-button">Kontakt</button>
+    <h3 class="gradient-text">Nutzen sie unsere Kontaktaufnahme</h3>
+    <a class="no-underline" href="/api/v1/user/Kontakt"><button class="gradient-button">Kontakt</button></a>
 </div>
-
 <div th:replace="fragments/nav-circular-fragment.html::div"></div>
 <div th:replace="fragments/newsletter-fragment.html::div"></div>
 <div th:replace="fragments/footer-fragment.html::footer"></div>

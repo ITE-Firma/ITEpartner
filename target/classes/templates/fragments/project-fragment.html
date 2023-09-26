@@ -28,6 +28,7 @@
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" th:style="'width: ' + ${projekt.status} + '%'" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
+                <p  th:text="${projekt.status} +'%'">%</p>
                 <div class="row">
                     <p>Status: <span class="status status-in-progress" th:text="${projekt.details}"></span></p>
                 </div>

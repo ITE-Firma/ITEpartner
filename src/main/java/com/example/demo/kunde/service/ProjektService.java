@@ -37,11 +37,14 @@ public class ProjektService {
     public void updateProjekt(Long id, Projekt projekt) throws Exception {
         Projekt existingProjekt = projektRepository.findById(id)
                 .orElseThrow(() -> new Exception("Projekt not found with id: " + id));
-        existingProjekt.setName(projekt.getName());
-        existingProjekt.setBeschreibung(projekt.getBeschreibung());
-        existingProjekt.setLogo(projekt.getLogo());
-        existingProjekt.setStatus(projekt.getStatus());
-        existingProjekt.setDetails(projekt.getDetails());
+        if(projekt.getName()!=null)
+            existingProjekt.setName(projekt.getName());
+        if(projekt.getBeschreibung()!=null)
+            existingProjekt.setBeschreibung(projekt.getBeschreibung());
+        if(projekt.getStatus()!=0)
+            existingProjekt.setStatus(projekt.getStatus());
+        if(projekt.getDetails()!=null)
+            existingProjekt.setDetails(projekt.getDetails());
         projektRepository.save(existingProjekt);
     }
 }

@@ -29,7 +29,17 @@ public class ProjektController {
         projektService.createProjekt(projekt);
         return "redirect:/admin/projekte";
     }
+    @PostMapping("/admin/project/delete/{id}")
+    public String deleteProject(@PathVariable Long id) {
+        projektService.deleteProjekt(id);
+        return "redirect:/admin/projekte";
+    }
+    @PostMapping("/admin/project/edit/{id}")
+    public String editProject(@PathVariable Long id,@ModelAttribute Projekt projekt) throws Exception {
 
+        projektService.updateProjekt(id ,projekt);
+        return "redirect:/admin/projekte";
+    }
     @GetMapping("/admin/projekte")
     public String showProjekt(Model model) {
         List<Projekt> projekte = projektService.getAllProjekte();

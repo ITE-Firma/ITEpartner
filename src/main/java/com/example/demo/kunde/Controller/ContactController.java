@@ -68,6 +68,18 @@ public class ContactController {
         System.out.println("showProjects sucess ");
         return "ProjektePortal";
     }
+    @GetMapping("/datenschutz")
+    public String showDatenschutz(Model model) {
+        model=getAttribut("index",model);
+        model=setSlider(model);
+        System.out.println("showDatenschutz sucess ");
+        return "ITE-Datenschutzerklärung";
+    }
+    @GetMapping("/agb")
+    public String showAgb() {
+        System.out.println("showAgb sucess ");
+        return "AGB";
+    }
     @GetMapping("/QuS")
     public String showQuS(Model model) {
         model=getAttribut("index",model);
