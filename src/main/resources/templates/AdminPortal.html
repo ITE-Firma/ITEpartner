@@ -41,10 +41,21 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" style="color: white" href="/admin/feedbackportal">
+                            Feedback-Portal
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: white" href="/admin/customerportal">
+                            Customer-Portal
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" style="color: white" href="/admin/projekte">
                             Projekte
                         </a>
                     </li>
+
                     <!-- Add more navigation items here -->
                 </ul>
             </div>
@@ -56,61 +67,6 @@
             <hr>
             <div class="container-fluid">
                 <br>
-                <div class="row">
-                    <h1>Customer List</h1>
-                    <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Email</th>
-                                <th>Firstname</th>
-                                <th>Lastname</th>
-                                <th>Anrede</th>
-                                <th>Company</th>
-                                <th>Interest</th>
-                                <th>Message</th>
-                                <th>Phone Number</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="customer : ${customers}">
-                                <td th:text="${customer.id}"></td>
-                                <td th:text="${customer.email}"></td>
-                                <td th:text="${customer.firstName}"></td>
-                                <td th:text="${customer.lastName}"></td>
-                                <td th:text="${customer.anrede}"></td>
-                                <td th:text="${customer.company}"></td>
-                                <td th:text="${customer.interest}"></td>
-                                <td th:text="${customer.message}"></td>
-                                <td th:text="${customer.phoneNumber}"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <h1 class="content-center">Feedback List</h1>
-                    <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Subject</th>
-                                <th>Message</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="feedback : ${feedbacks}">
-                                <td th:text="${feedback.id}"></td>
-                                <td th:text="${feedback.subject}"></td>
-                                <td th:text="${feedback.message}"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
             <hr>
             <div class="container-fluid">
@@ -171,5 +127,6 @@
 <!-- Include Bootstrap JS and Popper.js for dropdowns and other interactive components -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/js/project-script.js"></script>
 </body>
 </html>
