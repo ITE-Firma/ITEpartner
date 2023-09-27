@@ -84,16 +84,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="/admin/feedbackportal">
-                            Feedback-Portal
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="/admin/customerportal">
-                            Customer-Portal
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" style="color: white" href="/admin/projekte">
                             Projekte
                         </a>
@@ -150,10 +140,7 @@
                         <div class="pad-btm" style="margin-left: 30px">
                             <div  class="d-inline-block mr-2">
                                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editModal">Edit Project</button>
-                                <form th:action="@{'/admin/project/delete/' + ${projekt.id}}" method="post" class="btn" id="deleteForm">
-                                    <input type="hidden" name="_method" value="DELETE" />
-                                    <button type="button" class="btn btn-danger" onclick="deleteProject(event)">Delete Project</button>
-                                </form>
+                                <a th:href="@{'/admin/project/delete/' + ${projekt.id}}"><button type="button" class="btn btn-danger" >X</button></a>
                             </div>
                         </div>
                     </div>

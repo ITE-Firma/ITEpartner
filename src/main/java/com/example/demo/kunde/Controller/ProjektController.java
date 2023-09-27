@@ -29,7 +29,7 @@ public class ProjektController {
         projektService.createProjekt(projekt);
         return "redirect:/admin/projekte";
     }
-    @PostMapping("/admin/project/delete/{id}")
+    @GetMapping("/admin/project/delete/{id}")
     public String deleteProject(@PathVariable Long id) {
         projektService.deleteProjekt(id);
         return "redirect:/admin/projekte";

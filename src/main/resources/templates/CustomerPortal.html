@@ -133,10 +133,8 @@
               <td th:text="${customer.interest}"></td>
               <td th:text="${customer.message}"></td>
               <td th:text="${customer.phoneNumber}"></td>
-              <td > <form th:action="@{'/admin/delete/customer/' + ${customer.id}}" method="post" class="btn" id="deleteForm">
-                <input type="hidden" name="_method" value="DELETE" />
-                <button type="button" class="btn btn-danger" onclick="deleteProject(event)">X</button>
-              </form>
+              <td >
+                <a th:href="@{'/admin/delete/customer/' + ${customer.id}}"> <button type="button" class="btn btn-danger" >X</button></a>
               </td>
             </tr>
             </tbody>

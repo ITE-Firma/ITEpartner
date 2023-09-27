@@ -49,14 +49,14 @@ public class UserController{
         model.addAttribute("customers", customers);
         return "CustomerPortal";
     }
-    @PostMapping("/admin/delete/feedback/{id}")
+    @GetMapping ("/admin/delete/feedback/{id}")
     public String deleteFeedback(@PathVariable Long id) {
         feedbackService.deleteFeedback(id);
-        return "redirect:/admin";
+        return "redirect:/admin/feedbackportal";
     }
-    @PostMapping("/admin/delete/customer/{id}")
+    @GetMapping("/admin/delete/customer/{id}")
     public String deleteCustomer(@PathVariable Long id) {
         customerService.deleteCustomer(id);
-        return "redirect:/admin";
+        return "redirect:/admin/customerportal";
     }
 }

@@ -121,10 +121,8 @@
               <td th:text="${feedback.id}"></td>
               <td th:text="${feedback.subject}"></td>
               <td th:text="${feedback.message}"></td>
-              <td > <form th:action="@{'/admin/delete/feedback/' + ${feedback.id}}" method="post" class="btn" id="deleteFormFeedback">
-                <input type="hidden" name="_method" value="DELETE" />
-                <button type="button" class="btn btn-danger" onclick="deletePost(event)">X</button>
-              </form>
+              <td >
+                <a th:href="@{'/admin/delete/feedback/' + ${feedback.id}}"><button type="button" class="btn btn-danger" >X</button></a>
               </td>
             </tr>
             </tbody>
