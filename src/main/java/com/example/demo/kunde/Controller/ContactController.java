@@ -19,6 +19,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class ContactController {
     public String showForm(Model model) {
         model=getAttribut("index",model);
         model=getAttribut("welcome",model);
-        model=getAttribut("aboutus",model);
+        model=getAttribut("about",model);
         model= getAttribut("slide1",model);
         model= getAttribut("slide2",model);
         model= getAttribut("slide3",model);
@@ -277,15 +278,15 @@ public class ContactController {
                     model.addAttribute("welcome", null); // Oder eine Standardabbildung
                 break;
 
-            case "aboutus":
+            case "about":
                 model.addAttribute("mrEntity", bilderController.getBilder());
                 if (bilderController.getBilder().getAboutus() != null) {
                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getAboutus());
                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getAboutus()) ? "jpeg" : "png";
-                    model.addAttribute("logoImage", "data:image/" + imageFormat + ";base64," + base64Image);
+                    model.addAttribute("about", "data:image/" + imageFormat + ";base64," + base64Image);
                 }
                 else
-                    model.addAttribute("welcome", null); // Oder eine Standardabbildung
+                    model.addAttribute("about", null); // Oder eine Standardabbildung
 
                 break;
 
@@ -389,7 +390,7 @@ public class ContactController {
                 break;
             case "slide1":
                 model.addAttribute("mrEntity", bilderController.getBilder());
-                System.out.println(bilderController.getBilder().getSlide1() );
+                System.out.println("slide1"+ Arrays.toString(bilderController.getBilder().getSlide1()));
                 if (bilderController.getBilder().getSlide1() != null) {
                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getSlide1());
                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getSlide1()) ? "jpeg" : "png";
@@ -399,7 +400,7 @@ public class ContactController {
                 break;
             case "slide2":
                 model.addAttribute("mrEntity", bilderController.getBilder());
-                System.out.println(bilderController.getBilder().getSlide2() );
+                System.out.println("slide2"+ Arrays.toString(bilderController.getBilder().getSlide2()));
                 if (bilderController.getBilder().getSlide2() != null) {
                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getSlide2());
                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getSlide2()) ? "jpeg" : "png";
@@ -410,7 +411,7 @@ public class ContactController {
                 break;
             case "slide3":
                 model.addAttribute("mrEntity", bilderController.getBilder());
-                System.out.println(bilderController.getBilder().getSlide3() );
+                System.out.println("slide3"+ Arrays.toString(bilderController.getBilder().getSlide3()));
                 if (bilderController.getBilder().getSlide3() != null) {
                     base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getSlide3());
                     imageFormat = bilderController.isJpeg(bilderController.getBilder().getSlide3()) ? "jpeg" : "png";

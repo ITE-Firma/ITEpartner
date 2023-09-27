@@ -23,7 +23,7 @@ public class HomeController {
     public String home(Model model) {
         model=getAttribut("index",model);
         model=getAttribut("welcome",model);
-        model=getAttribut("aboutus",model);
+        model=getAttribut("about",model);
         model= getAttribut("slide1",model);
         model= getAttribut("slide2",model);
         model= getAttribut("slide3",model);
@@ -35,7 +35,7 @@ public class HomeController {
     public String HomeIndex(Model model) {
         model=getAttribut("index",model);
         model=getAttribut("welcome",model);
-        model=getAttribut("aboutus",model);
+        model=getAttribut("about",model);
         model= getAttribut("slide1",model);
         model= getAttribut("slide2",model);
         model= getAttribut("slide3",model);
@@ -63,14 +63,14 @@ public class HomeController {
                     model.addAttribute("welcome", null); // Oder eine Standardabbildung
                 break;
 
-            case "aboutus":
+            case "about":
                 model.addAttribute("mrEntity", bilderController.getBilder());
                 if (bilderController.getBilder().getAboutus() != null) {
                     String base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getAboutus());
                     String imageFormat = bilderController.isJpeg(bilderController.getBilder().getAboutus()) ? "jpeg" : "png";
-                    model.addAttribute("logoImage", "data:image/" + imageFormat + ";base64," + base64Image);
+                    model.addAttribute("about", "data:image/" + imageFormat + ";base64," + base64Image);
                 }else
-                    model.addAttribute("aboutus", null); // Oder eine Standardabbildung
+                    model.addAttribute("about", null); // Oder eine Standardabbildung
                 break;
 
             case "akustik":
@@ -176,7 +176,7 @@ public class HomeController {
                 if (bilderController.getBilder().getSlide1() != null) {
                     String base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getSlide1());
                     String imageFormat = bilderController.isJpeg(bilderController.getBilder().getSlide1()) ? "jpeg" : "png";
-                    model.addAttribute("slide2", "data:image/" + imageFormat + ";base64," + base64Image);
+                    model.addAttribute("slide1", "data:image/" + imageFormat + ";base64," + base64Image);
                 }else
                     model.addAttribute("slide1", null); // Oder eine Standardabbildung
                 break;
@@ -195,7 +195,7 @@ public class HomeController {
                 if (bilderController.getBilder().getSlide3() != null) {
                     String base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getSlide3());
                     String imageFormat = bilderController.isJpeg(bilderController.getBilder().getSlide3()) ? "jpeg" : "png";
-                    model.addAttribute("slide2", "data:image/" + imageFormat + ";base64," + base64Image);
+                    model.addAttribute("slide3", "data:image/" + imageFormat + ";base64," + base64Image);
                 }
                 else
                     model.addAttribute("slide3", null); // Oder eine Standardabbildung

@@ -4,9 +4,9 @@ spring:
     username: postgres
     password: 321
 
-    #url: jdbc:postgresql://containers-us-west-61.railway.app:5472/railway
-    #username: postgres
-    #password: mS2srNP3hvlFtGCQXvOQ
+   # url: jdbc:postgresql://containers-us-west-61.railway.app:5472/railway
+   # username: postgres
+   # password: mS2srNP3hvlFtGCQXvOQ
 
   jpa:
     hibernate:

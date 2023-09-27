@@ -66,9 +66,9 @@ public class BilderController {
         if (bilder.getAboutus() != null) {
             String base64Image = Base64.getEncoder().encodeToString(bilder.getAboutus());
             String imageFormat = isJpeg(bilder.getAboutus()) ? "jpeg" : "png";
-            model.addAttribute("aboutus", "data:image/" + imageFormat + ";base64," + base64Image);
+            model.addAttribute("about", "data:image/" + imageFormat + ";base64," + base64Image);
         } else {
-            model.addAttribute("aboutus", null); // Oder eine Standardabbildung
+            model.addAttribute("about", null); // Oder eine Standardabbildung
         }
 
         // Akustik
@@ -126,7 +126,7 @@ public class BilderController {
         }
 
         // projecte
-        if (bilder.getProjecte() != null) {
+        if (bilder.getShuk() != null) {
             String base64Image = Base64.getEncoder().encodeToString(bilder.getShuk());
             String imageFormat = isJpeg(bilder.getShuk()) ? "jpeg" : "png";
             model.addAttribute("projecte", "data:image/" + imageFormat + ";base64," + base64Image);
@@ -157,24 +157,28 @@ public class BilderController {
             String base64Image = Base64.getEncoder().encodeToString(bilder.getHust());
             String imageFormat = isJpeg(bilder.getHust()) ? "jpeg" : "png";
             model.addAttribute("hust", "data:image/" + imageFormat + ";base64," + base64Image);        } else {
+            model.addAttribute("hust", null); //
         }
         // sleider 1
         if (bilder.getSlide1() != null) {
             String base64Image = Base64.getEncoder().encodeToString(bilder.getSlide1());
             String imageFormat = isJpeg(bilder.getSlide1()) ? "jpeg" : "png";
             model.addAttribute("slide1", "data:image/" + imageFormat + ";base64," + base64Image);        } else {
+            model.addAttribute("slide1", null); //
         }
         // sleider 2
         if (bilder.getSlide2() != null) {
             String base64Image = Base64.getEncoder().encodeToString(bilder.getSlide2());
             String imageFormat = isJpeg(bilder.getSlide2()) ? "jpeg" : "png";
             model.addAttribute("slide2", "data:image/" + imageFormat + ";base64," + base64Image);        } else {
+            model.addAttribute("slide2", null); //
         }
         // sleider 3
         if (bilder.getSlide3() != null) {
             String base64Image = Base64.getEncoder().encodeToString(bilder.getSlide3());
             String imageFormat = isJpeg(bilder.getSlide3()) ? "jpeg" : "png";
             model.addAttribute("slide3", "data:image/" + imageFormat + ";base64," + base64Image);        } else {
+            model.addAttribute("slide3", null); //
         }
 
         return "UploadPortal";
