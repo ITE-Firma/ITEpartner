@@ -112,3 +112,9 @@ body {
     background: #007bb5;
     color: white;
 }
+.projekt:hover{
+   width: 103%;
+   height: 103%;
+    border-color: #ff8c00;
+    border-width: medium;
+}
