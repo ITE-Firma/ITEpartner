@@ -18,7 +18,7 @@
 	</parent>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<mariadb.version>2.7.4</mariadb.version>
 	</properties>
 
@@ -109,10 +109,6 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
