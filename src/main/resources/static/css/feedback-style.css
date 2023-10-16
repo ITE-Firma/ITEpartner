@@ -1,8 +1,8 @@
 .modal-header{
-    background:   linear-gradient(to right, #ff8c00, #ff0000);
+    background:    linear-gradient(to right, #97c2ae, #198754);
 }
 .modal-content{
-    border-color:  #ff8c00;
+    border-color:  #198754;
 }
 .modal-title{
     color:white;
@@ -30,7 +30,7 @@
 
 .feedback-button {
     padding: 10px 20px;
-    background: linear-gradient(to right, #ff8c00, #ff0000);
+    background:linear-gradient(to right, #97c2ae, #198754);
     color: white;
     border: none;
     border-radius: 5px;
@@ -43,4 +43,16 @@
     background-color: #0056b3;
     transform: scale(1.1);
     padding: 15px 25px;
+}
+.btn{
+    margin-top: 10px;
+    background-color:#198754;
+    color: white;
+}
+.btn:hover{
+    background-color:#198754;
+    color: white;
+}
+.z{
+    z-index: -100;
 }

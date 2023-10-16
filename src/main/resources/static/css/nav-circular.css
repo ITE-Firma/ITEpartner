@@ -16,7 +16,7 @@
     transition: background-color 0.3s, border 0.3s;
     border: 2px solid transparent;
     color: white;
-    background: linear-gradient(#ff0000, #ff8c00, #ff0000);
+    background:  linear-gradient(#198754, #97c2ae, #198754);
 }
 
 .circular-button:hover {

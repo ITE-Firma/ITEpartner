@@ -2,7 +2,7 @@
     margin-top: 150px;
     width: 100vw;
     height: 200px;
-    background: linear-gradient(to right, #ff8c00, #ff0000);
+    linear-gradient(to right, #97c2ae, #198754)
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@
     border-radius: 20px;
     width: 120px;
     background-color: white;
-    color: #ff8c00;
+    color: black;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -29,7 +29,7 @@
 }
 
 .gradient-button:hover {
-    background-color: #ff8c00;
+    background-color: #198754;
     color: white;
     transform: scale(0.9); /* Slightly bigger button */
     padding: 15px 30px;
