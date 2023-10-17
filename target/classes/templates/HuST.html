@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/nav-top-style.css">
+    <link rel="stylesheet" href="/css/nav-circular.css">
+    <link rel="stylesheet" href="/css/header-style.css">
+    <link rel="stylesheet" href="/css/index-style.css">
+    <link rel="stylesheet" href="/css/feedback-style.css">
+    <title>Hardware und System Testing</title>
+</head>
+<body>
+
+<div th:replace="fragments/nav-top-fragment::nav" ></div>
+<div th:replace="fragments/header-fragment::div" ></div>
+
+<section class="image-text-section" style="margin-top: 80px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Hardware und System Testing</h2>
+                <div>
+                    <div>
+                        <p style="padding-left: 10px; padding-top: 10px"> Unter der Hardware und Systemtesting lässt
+                            sich X beliegige Hardware testen und ihr System auf Herz und Niere prüfen. Wir erfüllen
+                            einige Tests, wie thermische Messung, Umwelt-, elektrische Tests. Unterstützen Sie bei der
+                            Qualifikation ihrer Produkte. Wir übernehmen die Vorbereitung, Hardware- und
+                            Softwareintegration, Installation der Software und nehmen ihr Produkt in Betrieb. Zu unserem
+                            Support gehört auch die Fehlereanalyse und Reperatur.</p>
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li>★ Thermische Messungen und Wärmebild Untersuchung</li>
+                            <li>★ System/Hardware Testing (Umwelttests, Testaufbau, elektrische und EMC-Tests)</li>
+                            <li>★ Unterstützung von Prüfkonzepten, Qualifikation erste Prototypen bis zu Serienfertigung</li>
+                            <li>★ Hardware- und Softwareintegration sowie Inbetriebnahmen von Prüfständen</li>
+                            <li>★ Prüfstands Vorbereitung und Inbetriebnahme</li>
+                            <li>★ PCBA-Fehleranalyse + Reparatur (In-Circuit-Test ICT)</li>
+                            <li>★ Softwareinstallation, volle Konfiguration und Testing></li>
+                            <li>★ Thermische Messungen und Wärmebild Untersuchung</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img th:if="${hust}" th:src="${hust}" alt="Image" class="img-fluid content-img">
+                <img th:unless="${hust}" src="/images/placeholder.jpg" alt="Placeholder" class="img-fluid content-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gradient-div">
+    <h3 class="gradient-text">Nutzen sie unsere Kontaktaufnahme</h3>
+    <a class="no-underline" href="/api/v1/user/Kontakt"><button class="gradient-button">Kontakt</button></a>
+</div>
+
+<div th:replace="fragments/nav-circular-fragment.html::div"></div>
+<div th:replace="fragments/feedback-fragment::div"></div>
+<div th:replace="fragments/newsletter-fragment.html::div"></div>
+<div th:replace="fragments/footer-fragment.html::footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/nav-circular-script.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

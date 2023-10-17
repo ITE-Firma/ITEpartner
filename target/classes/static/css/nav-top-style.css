@@ -1,0 +1,129 @@
+body {
+
+    margin: 0;
+}
+.navbar{
+    background-color: #c59838;
+}
+.navbar-link {
+    position: relative;
+    transition: color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+}
+.navbar-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background:  linear-gradient(to right, #97c2ae, #198754);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.navbar-link:hover {
+    color: #198754;
+}
+
+.navbar-link:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(50vh - 110px); /* Adjust the header height */
+    background-color: #f5f5f5;
+}
+
+
+
+@keyframes slide {
+    0%, 100% {
+        transform: translateX(-100%);
+    }
+    25%, 75% {
+        transform: translateX(0);
+    }
+}
+
+.ml-auto-nav {
+    margin-left: auto;
+}
+
+
+
+
+@media screen and (max-width: 990px) {
+    .temp{
+        display: none;
+    }
+}
+
+.gradient-div {
+    margin-top: 150px;
+    width: 100vw;
+    height: 200px;
+    background:  linear-gradient(to right, #97c2ae, #198754);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gradient-text {
+    color: white;
+}
+
+.gradient-button {
+    border-radius: 20px;
+    margin-top: 10px;
+    width: 120px;
+    background-color: white;
+    color: #198754;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.gradient-button:hover {
+    background-color: #198754;
+    color: white;
+    transform: scale(0.9); /* Slightly bigger button */
+    padding: 15px 30px;
+}
+
+.fa {
+    padding: 5px;
+    text-align: center;
+    margin: 5px 2px;
+    font-size: 30px;
+    width: 40px;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+.projekt:hover{
+   width: 103%;
+   height: 103%;
+    border-color: #198754;
+    border-width: medium;
+}
+.projekt{
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+a{
+    color: black;
+}

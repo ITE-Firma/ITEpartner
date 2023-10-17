@@ -36,7 +36,6 @@ public class ProjektController {
     }
     @PostMapping("/admin/project/edit/{id}")
     public String editProject(@PathVariable Long id,@ModelAttribute Projekt projekt) throws Exception {
-
         projektService.updateProjekt(id ,projekt);
         return "redirect:/admin/projekte";
     }

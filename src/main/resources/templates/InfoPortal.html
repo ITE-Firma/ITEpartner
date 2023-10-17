@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/css/header-style.css">
   <link rel="stylesheet" href="/css/index-style.css">
   <link rel="stylesheet" href="/css/cookies-style.css">
-  <link rel="stylesheet" href="/css/feedback-style.css">
+
   <link rel="stylesheet" href="/css/project-style.css">
 
 
@@ -98,53 +98,46 @@
               Projekte
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" style="color: white" href="/admin/information">
-              Information
-            </a>
-          </li>
+
           <!-- Add more navigation items here -->
         </ul>
       </div>
     </nav>
     <!-- Content -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
-      <div class="row">
-        <h1>Customer List</h1>
-        <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
-          <table class="table">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Email</th>
-              <th>Firstname</th>
-              <th>Lastname</th>
-              <th>Anrede</th>
-              <th>Company</th>
-              <th>Interest</th>
-              <th>Message</th>
-              <th>Phone Number</th>
-              <th>Delete</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="customer : ${customers}">
-              <td th:text="${customer.id}"></td>
-              <td th:text="${customer.email}"></td>
-              <td th:text="${customer.firstName}"></td>
-              <td th:text="${customer.lastName}"></td>
-              <td th:text="${customer.anrede}"></td>
-              <td th:text="${customer.company}"></td>
-              <td th:text="${customer.interest}"></td>
-              <td th:text="${customer.message}"></td>
-              <td th:text="${customer.phoneNumber}"></td>
-              <td >
-                <a th:href="@{'/admin/delete/customer/' + ${customer.id}}"> <button type="button" class="btn btn-danger" >X</button></a>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+      <h1>information Protal </h1>
+      <form th:object="${information}" th:action="@{/admin/add/information}" method="post" class="project-form" style="margin-top: 100px"
+            enctype="multipart/form-data">
+        <h4>Neues infor hinzufügen</h4>
+        <label for="info">information:</label>
+        <input type="text" id="info" name="info" required/>
+        <button type="submit">info hinzufügen</button>
+      </form>
+      <hr>
+
+
+      <div class="scrollable-container">
+        <div class="scrollable-list"  th:each="information : ${information}" >
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title" th:text="${information.info}">Project A</h5>
+              <p>Status: <span class="status status-in-progress" th:text="${information}"></span></p>
+              <p class="card-text" th:text="${information.info}">My project description</p>
+            </div>
+
+            <div class="pad-btm" style="margin-left: 30px">
+              <div  class="d-inline-block mr-2">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editModal">Edit Info</button>
+                <a th:href="@{'/admin/information/delete/' + ${information.id}}"><button type="button" class="btn btn-danger" >X</button></a>
+              </div>
+            </div>
+          </div>
+
+
+
         </div>
+        <!-- Modal -->
+
       </div>
     </main>
   </div>
