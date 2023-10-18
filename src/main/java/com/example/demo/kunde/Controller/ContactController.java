@@ -3,10 +3,12 @@ import com.example.demo.kunde.email.EmailSender;
 import com.example.demo.kunde.email.EmailService;
 import com.example.demo.kunde.model.Customer;
 import com.example.demo.kunde.model.Feedback;
+import com.example.demo.kunde.model.Information;
 import com.example.demo.kunde.model.Projekt;
 import com.example.demo.kunde.regestrieren.token.RegistrationService;
 import com.example.demo.kunde.service.CustomerService;
 import com.example.demo.kunde.service.FeedbackService;
+import com.example.demo.kunde.service.InformationService;
 import com.example.demo.kunde.service.ProjektService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,8 +41,9 @@ public class ContactController {
     @Autowired
     private FeedbackService feedbackService;
     @Autowired
-    ProjektService projektService;
-
+    private ProjektService projektService;
+    @Autowired
+    private InformationService informationService;
     public ContactController(RegistrationService registrationService, SpringTemplateEngine templateEngine, EmailSender emailSender,EmailService emailService,BilderController bilderController) {
         this.registrationService = registrationService;
         this.templateEngine = templateEngine;
@@ -57,17 +60,23 @@ public class ContactController {
         model= getAttribut("slide1",model);
         model= getAttribut("slide2",model);
         model= getAttribut("slide3",model);
+        List<Information>information=informationService.getAllInformationen();
+        model.addAttribute("information", information);
         List<Projekt> projekte = projektService.getAllProjekte();
         model.addAttribute("projekte", projekte);
         System.out.println("showForm sucess ");
         return "index";
     }
-    @GetMapping("/projects")
-    public String showProjects(Model model) {
+    @GetMapping("/projektAnsicht/{projectId}")
+    public String showProjects(@PathVariable Long projectId,Model model) throws Exception {
         model=getAttribut("index",model);
         model=setSlider(model);
+        Projekt projekt= projektService.getProjektById(projectId);
+        model.addAttribute("projekt", projekt);
+        List<Projekt> projekte = projektService.getAllProjekte();
+        model.addAttribute("projekte", projekte);
         System.out.println("showProjects sucess ");
-        return "ProjektePortal";
+        return "projekt";
     }
     @GetMapping("/datenschutz")
     public String showDatenschutz(Model model) {
@@ -77,7 +86,9 @@ public class ContactController {
         return "ITE-Datenschutz";
     }
     @GetMapping("/agb")
-    public String showAgb() {
+    public String showAgb(Model model) {
+        model=getAttribut("index",model);
+        model=setSlider(model);
         System.out.println("showAgb sucess ");
         return "AGB";
     }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="gradient-div">
+    <h3 class="gradient-text"> Projekte Ansicht </h3>
+</div>
+<div class="container-projekt">
+    <img th:if="${projekt.logo}"
+         th:src="@{/admin/projekte/image/{projectId}(projectId=${projekt.id})}" alt="Projektbild" class="project-image-projekt">
+
+    <div class="project-details-projekt">
+        <h2 class="project-title-projekt" th:text="${projekt.name}">Projekttitel</h2>
+        <p class="project-description-projekt"  th:text="${projekt.beschreibung}">
+            Hier ist eine kurze Beschreibung deines Projekts. Du kannst hier alle wichtigen Informationen, Ziele, Ergebnisse und Besonderheiten deines Projekts beschreiben.
+        </p>
+    </div>
+</div>
+</body>
+</html>

@@ -17,8 +17,12 @@ public class InformationController {
     @Autowired
     InformationService informationService;
     @PostMapping("/admin/add/information")
-    public String addInfo(@ModelAttribute Information information) throws IOException {
-        informationService.createInformation(information);
+    public String addInfo(@ModelAttribute Information information) throws Exception {
+        if(informationService.getAllInformationen().size()==0)
+            informationService.createInformation(information);
+        else
+            informationService.updateInformation(informationService.getAllInformationen().get(0).getId(),information);
+
         return "redirect:/admin/information";
     }
     @GetMapping("/admin/information/delete/{id}")
@@ -27,11 +31,12 @@ public class InformationController {
         return "redirect:/admin/information";
     }
     @GetMapping("/admin/information")
-    public String showInfo(Model model) {
+    public String showInformationen(Model model) {
         List<Information> information = informationService.getAllInformationen();
         model.addAttribute("information", information);
         return "InfoPortal";
     }
+
     @PostMapping("/admin/information/edit/{id}")
     public String editProject(@PathVariable Long id,@ModelAttribute Information information) throws Exception {
         informationService.updateInformation(id ,information);

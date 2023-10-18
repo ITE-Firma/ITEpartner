@@ -125,6 +125,9 @@
                 <label for="beschreibung">Projektbeschreibung:</label>
                 <input type="text" id="beschreibung" name="beschreibung" required/>
 
+                <label for="kurzebeschreibung">Projektkurzbeschreibung:</label>
+                <input type="text" id="kurzebeschreibung" name="kurzebeschreibung" required/>
+
                 <label >Projektbild:</label>
                 <input type="file" name="pictureFile" accept="image/*" class="form-control">
                 <button type="submit">Projekt hinzufügen</button>
@@ -142,7 +145,7 @@
                         <div class="card-body">
                             <h5 class="card-title" th:text="${projekt.name}">Project A</h5>
                             <p>Status: <span class="status status-in-progress" th:text="${projekt.details}"></span></p>
-                            <p class="card-text" th:text="${projekt.beschreibung}">My project description</p>
+                            <p class="card-text" th:text="${projekt.kurzebeschreibung}">My project description</p>
                         </div>
                         <div class="card-footer">
                             <div class="progress">
@@ -187,6 +190,9 @@
                                         <hr>
                                         <label for="Projekbeschreibung">Projektbeschreibung:</label>
                                         <input type="text" id="Projekbeschreibung" name="beschreibung" th:value="${projekt.beschreibung}"/>
+
+                                        <label for="Projektkurzbeschreibung">Projektkurzbeschreibung:</label>
+                                        <input type="text" id="Projektkurzbeschreibung" name="kurzebeschreibung" th:value="${projekt.beschreibung}"/>
 
                                         <!-- Weitere Formularelemente hier -->
                                     </div>

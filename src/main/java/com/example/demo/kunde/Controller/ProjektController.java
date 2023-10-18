@@ -53,4 +53,5 @@ public class ProjektController {
         headers.setContentType(MediaType.IMAGE_JPEG); // Change this to the appropriate image format
         return new ResponseEntity<>(imageData, headers, HttpStatus.OK);
     }
+
 }

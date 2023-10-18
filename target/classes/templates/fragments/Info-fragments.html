@@ -9,9 +9,9 @@
 <div class="card-buddy">
 <div class="container">
   <div class="row">
-    <div class="col-14">
-      <div class="info-card">
-       Information: Unsere Öffnungszeiten sind von MO-FR von 09:00-18:00
+    <div class="col-14" th:each="information : ${information}">
+      <div class="info-card" th:if="${not #strings.isEmpty(information.info)}">
+        <span th:if="${not #strings.isEmpty(information.info)}" th:text="${information.info}">Information: Unsere Öffnungszeiten sind von MO-FR von 09:00-18:00</span>
       </div>
     </div>
   </div>

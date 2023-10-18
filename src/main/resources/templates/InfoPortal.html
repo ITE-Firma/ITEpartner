@@ -108,37 +108,25 @@
       <h1>information Protal </h1>
       <form th:object="${information}" th:action="@{/admin/add/information}" method="post" class="project-form" style="margin-top: 100px"
             enctype="multipart/form-data">
-        <h4>Neues infor hinzufügen</h4>
+        <h4>Neues Info hinzufügen/ Info bearbeiten</h4>
         <label for="info">information:</label>
-        <input type="text" id="info" name="info" required/>
-        <button type="submit">info hinzufügen</button>
+        <input type="text" id="info" name="info" />
+        <button type="submit">Info hinzufügen</button>
       </form>
       <hr>
-
-
       <div class="scrollable-container">
         <div class="scrollable-list"  th:each="information : ${information}" >
           <div class="card" >
-            <div class="card-body">
               <h5 class="card-title" th:text="${information.info}">Project A</h5>
-              <p>Status: <span class="status status-in-progress" th:text="${information}"></span></p>
-              <p class="card-text" th:text="${information.info}">My project description</p>
             </div>
-
             <div class="pad-btm" style="margin-left: 30px">
               <div  class="d-inline-block mr-2">
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editModal">Edit Info</button>
                 <a th:href="@{'/admin/information/delete/' + ${information.id}}"><button type="button" class="btn btn-danger" >X</button></a>
               </div>
             </div>
           </div>
-
-
-
         </div>
         <!-- Modal -->
-
-      </div>
     </main>
   </div>
 </div>

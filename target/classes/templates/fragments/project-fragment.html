@@ -21,7 +21,8 @@
 
 
             <div class="col-lg-4 col-md-6 mb-4 "  th:each="projekt : ${projekte}">
-                <div class="card projekt">
+                <a  th:href="@{/api/v1/user/projektAnsicht/{projectId}(projectId=${projekt.id})}" >
+                <div class="card projekt" >
                     <div class="bg-image hover-overlay ripple "  data-mdb-ripple-color="light" >
                         <img th:if="${projekt.logo}"
                              th:src="@{/admin/projekte/image/{projectId}(projectId=${projekt.id})}" alt="Projekt Bild"
@@ -35,9 +36,10 @@
                             <div class="progress-bar" role="progressbar" th:style="'width: ' + ${projekt.status} + '%;   background:linear-gradient(to right, #97c2ae, #198754);'" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <p  th:text="${projekt.status} +'%'">%</p>
-                        <p class="card-text" th:text="${projekt.beschreibung}">My project description</p>
+                        <p class="card-text" th:text="${projekt.kurzebeschreibung}">My project description</p>
                     </div>
                 </div>
+                </a>
             </div>
 
         </div>

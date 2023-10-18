@@ -16,8 +16,10 @@ public class Projekt {
     private byte[] logo;
 
     private String name;
+    @Column(name = "kurzebeschreibung", columnDefinition="VARCHAR")
+    private String kurzebeschreibung;
+    @Column(name = "beschreibung", columnDefinition="VARCHAR")
     private String beschreibung;
-
     private double status;
     private String  details;
 
@@ -27,21 +29,23 @@ public class Projekt {
 
     }
 
-    public Projekt(Long id, byte[] logo, String name, String beschreibung, double status, String details) {
+    public Projekt(Long id, byte[] logo, String name, String beschreibung, double status, String details, String kurzebeschreibung) {
         this.id = id;
         this.logo = logo;
         this.name = name;
         this.beschreibung = beschreibung;
         this.status = status;
         this.details = details;
+        this.kurzebeschreibung=kurzebeschreibung;
     }
 
-    public Projekt(byte[] logo, String name, String beschreibung, double status, String details) {
+    public Projekt(byte[] logo, String name, String beschreibung, double status, String details,String kurzebeschreibung) {
         this.logo = logo;
         this.name = name;
         this.beschreibung = beschreibung;
         this.status = status;
         this.details = details;
+        this.kurzebeschreibung=kurzebeschreibung;
     }
 
     public String getDetails() {
@@ -62,6 +66,14 @@ public class Projekt {
 
     public byte[] getLogo() {
         return logo;
+    }
+
+    public String getKurzebeschreibung() {
+        return kurzebeschreibung;
+    }
+
+    public void setKurzebeschreibung(String kurzebeschreibung) {
+        this.kurzebeschreibung = kurzebeschreibung;
     }
 
     public void setLogo(byte[] logo) {

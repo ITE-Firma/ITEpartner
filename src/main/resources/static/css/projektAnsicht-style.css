@@ -1,0 +1,29 @@
+.container-projekt {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-image-projekt {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.project-details-projekt {
+    margin-top: 2rem;
+}
+
+.project-title-projekt {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-description-projekt {
+    font-size: 1rem;
+    line-height: 1.5;
+}

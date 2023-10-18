@@ -16,7 +16,7 @@ public class Customer {
     private String email = ""; // Set default value to empty string
     @Column(nullable = false)
     private String phoneNumber = ""; // Set default value to empty string
-    @Column(name = "message", length = 1000) // erhöht die maximale Länge des Felds auf 1000 Zeichen
+    @Column(name = "message", columnDefinition="VARCHAR")
     private String message;
     @Column(nullable = false)
     private String interest = ""; // Set default value to empty string

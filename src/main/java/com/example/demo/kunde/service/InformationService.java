@@ -14,6 +14,7 @@ public class InformationService {
     public List<Information> getAllInformationen() {
         return infromationRepository.findAll();
     }
+
     public Information getInformationenById(Long id) throws Exception {
         return infromationRepository.findById(id).orElseThrow(Exception::new);
     }

@@ -45,6 +45,8 @@ public class ProjektService {
             existingProjekt.setStatus(projekt.getStatus());
         if(projekt.getDetails()!=null)
             existingProjekt.setDetails(projekt.getDetails());
+        if(projekt.getKurzebeschreibung()!=null)
+            existingProjekt.setKurzebeschreibung(projekt.getKurzebeschreibung());
         projektRepository.save(existingProjekt);
     }
 }

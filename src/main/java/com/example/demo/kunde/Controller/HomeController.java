@@ -1,6 +1,8 @@
 package com.example.demo.kunde.Controller;
 
+import com.example.demo.kunde.model.Information;
 import com.example.demo.kunde.model.Projekt;
+import com.example.demo.kunde.service.InformationService;
 import com.example.demo.kunde.service.ProjektService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,8 @@ public class HomeController {
     @Autowired
     ProjektService projektService;
     @Autowired
+    InformationService informationService;
+    @Autowired
     public HomeController(BilderController bilderController){
         this.bilderController=bilderController;
     }
@@ -27,6 +31,8 @@ public class HomeController {
         model= getAttribut("slide1",model);
         model= getAttribut("slide2",model);
         model= getAttribut("slide3",model);
+        List<Information>information=informationService.getAllInformationen();
+        model.addAttribute("information", information);
         List<Projekt> projekte = projektService.getAllProjekte();
         model.addAttribute("projekte", projekte);
         return "index";
@@ -39,6 +45,8 @@ public class HomeController {
         model= getAttribut("slide1",model);
         model= getAttribut("slide2",model);
         model= getAttribut("slide3",model);
+        List<Information>information=informationService.getAllInformationen();
+        model.addAttribute("information", information);
         List<Projekt> projekte = projektService.getAllProjekte();
         model.addAttribute("projekte", projekte);
         return "index";
