@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/kunde
-    username: postgres
-    password: 321
+   # url: jdbc:postgresql://localhost:5432/kunde
+   #username: postgres
+   # password: 321
 
-   # url: jdbc:postgresql://containers-us-west-61.railway.app:5472/railway
-   # username: postgres
-   # password: mS2srNP3hvlFtGCQXvOQ
+    url: postgresql://postgres:vMyB9LHT3XKUH25GwK6I@containers-us-west-112.railway.app:7373/railway
+    username: postgres
+    password: vMyB9LHT3XKUH25GwK6I
 
   jpa:
     hibernate:

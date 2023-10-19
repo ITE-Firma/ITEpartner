@@ -2,14 +2,16 @@
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
-
+.card-buddy{
+    background-color:#97c2ae;
+}
 .info-card {
     position: relative;
     height: 100px;
     overflow: hidden;
     white-space: nowrap;
-    animation: move-info 10s linear infinite;
-    background:linear-gradient(to right, #97c2ae, #198754);
+    animation: move-info 15s linear infinite;
+    background-color:#198754;
     padding-top: 35px;
     padding-left: 20%;
     padding-right: 20%;
@@ -20,6 +22,7 @@
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
 }
+
 @media screen and (max-width: 990px) {
     .info-card{
         width: 500px;

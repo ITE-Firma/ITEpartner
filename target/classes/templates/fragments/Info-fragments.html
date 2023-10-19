@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-14" th:each="information : ${information}">
       <div class="info-card" th:if="${not #strings.isEmpty(information.info)}">
-        <span th:if="${not #strings.isEmpty(information.info)}" th:text="${information.info}">Information: Unsere Öffnungszeiten sind von MO-FR von 09:00-18:00</span>
+        <p th:if="${not #strings.isEmpty(information.info)}" th:text="${information.info}">Information: Unsere Öffnungszeiten sind von MO-FR von 09:00-18:00</p>
       </div>
     </div>
   </div>
