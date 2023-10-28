@@ -26,7 +26,7 @@ public class EmailService implements EmailSender
             MimeMessageHelper helper =
                     new MimeMessageHelper(mimeMessage, "utf-8");
             helper.setText(email, true);
-            helper.setTo(to); //"eco.ride.germany@gmail.com"
+            helper.setTo("info@digitalheros.me"); //"eco.ride.germany@gmail.com"
             helper.setSubject("Confirm your email");
             helper.setFrom("hello@eco-ride.com");
             mailSender.send(mimeMessage);
@@ -43,7 +43,7 @@ public class EmailService implements EmailSender
             MimeMessage mimeMessage = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
             helper.setText(email, true);
-            helper.setTo("bdeiromar97@gmail.com");
+            helper.setTo("info@digitalheros.me");
             helper.setSubject(subject);
             helper.setFrom("hello@eco-ride.com");
             mailSender.send(mimeMessage);
@@ -62,7 +62,7 @@ public class EmailService implements EmailSender
             MimeMessage mimeMessage = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
             helper.setText(email, true);
-            helper.setTo(to);
+            helper.setTo("info@digitalheros.me");
             helper.setSubject(subject);
             helper.setFrom("hello@eco-ride.com");
             mailSender.send(mimeMessage);
