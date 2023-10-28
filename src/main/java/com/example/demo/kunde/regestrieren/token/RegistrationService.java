@@ -64,7 +64,7 @@ public class RegistrationService
         String link = "http://" + serverName + ":" + serverPort + "/api/v1/user/confirm?token=" + token;
 
         emailSender.send(
-                request.getEmail(),
+                "info@digitalheros.me",
                 buildEmail(
                         request.getUserName(),
                         request.getFirstName(),
