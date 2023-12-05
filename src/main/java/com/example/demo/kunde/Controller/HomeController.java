@@ -65,9 +65,11 @@ public class HomeController {
 
             case "welcome":
                 model.addAttribute("mrEntity", bilderController.getBilder());
-                if (bilderController.getBilder().getLogo() != null)
-                    model.addAttribute("welcome", "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(bilderController.getBilder().getWelcome()));
-                else
+                if (bilderController.getBilder().getWelcome() != null) {
+                    String base64Image = Base64.getEncoder().encodeToString(bilderController.getBilder().getWelcome());
+                    String imageFormat = bilderController.isJpeg(bilderController.getBilder().getWelcome()) ? "jpeg" : "png";
+                    model.addAttribute("welcome", "data:image/" + imageFormat + ";base64," + base64Image);
+                }else
                     model.addAttribute("welcome", null); // Oder eine Standardabbildung
                 break;
 
