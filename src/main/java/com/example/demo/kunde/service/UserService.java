@@ -1,11 +1,9 @@
 package com.example.demo.kunde.service;
-import com.example.demo.kunde.model.Customer;
 import com.example.demo.kunde.model.User;
 import com.example.demo.kunde.regestrieren.token.ConfirmationToken;
 import com.example.demo.kunde.regestrieren.token.ConfirmationTokenService;
 import com.example.demo.kunde.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -85,5 +83,8 @@ public class UserService implements UserDetailsService {
         } else {
             throw new IllegalArgumentException("Benutzer nicht gefunden");
         }
+    }
+    public Optional<User> findUserbyEmail(String email){
+        return userRepository.findByEmail(email);
     }
 }
