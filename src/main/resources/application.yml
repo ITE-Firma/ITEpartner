@@ -1,12 +1,13 @@
+
+
 spring:
   datasource:
-   #url: jdbc:postgresql://localhost:5432/kunde
-   #username: postgres
-   #password: 321
-   url: jdbc:postgresql://postgres:GGFf125B2FdEFC6DFfBC6ecEFc6AaBgb@monorail.proxy.rlwy.net:50679/railway
-   username: postgres
-   password: GGFf125B2FdEFC6DFfBC6ecEFc6AaBgb
-
+    #url: jdbc:postgresql://localhost:5432/kunde
+    #username: postgres
+    #password: 321
+    url: jdbc:postgresql://monorail.proxy.rlwy.net:50679/railway
+    username: postgres
+    password: GGFf125B2FdEFC6DFfBC6ecEFc6AaBgb
 
   jpa:
     hibernate:
