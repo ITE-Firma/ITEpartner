@@ -1,7 +1,4 @@
-.imgSlider{
-    width: 400px;
-    height: 300px;
-}
+
 .header {
     display: flex;
     align-items: center;
@@ -83,8 +80,8 @@
         align-items: center; /* Center items horizontally */
     }
     .imgSlider{
-        width: 500px;
-        height: 300px
+        width: 50%;
+        height: 40%
     }
     .sliding-text,
     .sliding-image {
